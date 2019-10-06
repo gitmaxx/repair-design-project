@@ -1,0 +1,54 @@
+* {
+    border: 1px solid black;
+}
+
+$text-color--main: #E3B873;
+$text-color--light: #FFFFFF;
+$text-color--dark: #959595;
+$text-color--darken: #363636;
+$text-color--darkest: #181818;
+$text-color--dark-transparent: rgba(255, 255, 255, 0.5);
+
+.header {
+    max-width: 1440px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+.section {
+    max-width: 1440px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+.first_section {
+    display: flex;
+}
+
+.navbar {
+    width:60%;
+    &_list {
+        display: flex;
+    }
+}
+
+
+
+.main_image {
+    background-image: url(assets/images/section1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 85%;
+    background-color: #131313;
+ 
+  background-position: 82px 0px;
+ 
+
+}
+
+@media (max-width: 375px) {
+
+
+}
