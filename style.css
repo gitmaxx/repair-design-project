@@ -100,6 +100,26 @@
       grid-template-columns: 36.79% 63.21%;
   height: 600px;
   margin: 0 0 0 7%;
+  position: relative;
+}
+
+.slider_play {
+  position: absolute;
+  top: 50%;
+  left: 93%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  line-height: 0.6rem;
+  z-index: 20;
+}
+
+.slider_play--svg {
+  fill: #E3B873;
+}
+
+.slider_play--svg:hover {
+  fill: #eea125;
+  cursor: pointer;
 }
 
 .slider_header {
@@ -130,6 +150,19 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.slider--control {
+  fill: white;
+  line-height: 0.6rem;
+}
+
+.slider--control:hover {
+  cursor: pointer;
+  fill: #eea125;
 }
 
 .slider_items_headings {
@@ -205,6 +238,9 @@
   display: -ms-flexbox;
   display: flex;
   padding: 2px 14px 0 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .slider--indicator {
@@ -220,6 +256,11 @@
 .slider--indicator-active {
   -webkit-filter: brightness(100%);
           filter: brightness(100%);
+}
+
+.slider--indicator:hover {
+  width: 14px;
+  height: 14px;
 }
 
 .slider--items {
@@ -831,6 +872,9 @@
   background-color: #131313;
   width: 250px;
   height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .scroll--text {
@@ -848,20 +892,23 @@
           transform: translate(-50%, -50%);
 }
 
-.scroll--text::after {
-  content: ' ';
-  background: url(assets/icons/scrolldown.svg);
-  color: #E3B873;
-  display: inline-block;
-  height: 29px;
-  width: 29px;
-  background-repeat: no-repeat;
-  background-size: auto;
+.scroll_icon {
   position: absolute;
-  right: -70px;
   top: 50%;
-  -webkit-transform: translate(-100%, -50%);
-          transform: translate(-100%, -50%);
+  left: 85%;
+  margin-right: -10%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  line-height: 0.6rem;
+}
+
+.scroll_icon--svg {
+  stroke: #E3B873;
+}
+
+.scroll_icon--svg:hover {
+  stroke: #eea125;
+  cursor: pointer;
 }
 
 .section_projects {
@@ -1421,10 +1468,20 @@
 
 .section_address--icon {
   padding: 0 7px 0 7px;
+  fill: #E3B873;
+}
+
+.section_address--icon:hover {
+  fill: #eea125;
+  cursor: pointer;
 }
 
 .section_address--map-mobile {
   display: none;
+}
+
+.section_address--tel {
+  text-decoration: none;
 }
 
 .footer {
