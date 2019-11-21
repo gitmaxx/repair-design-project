@@ -14,6 +14,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
 .body_wrapper {
     max-width: 1440px;
     box-sizing: border-box;
+    margin: 0 auto;
 }
 
 .header {
@@ -172,9 +173,16 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     &--item {
         margin-right: 20px;
     }
+    &--image {
+        width: 100%;
+        height: auto;
+    }
+    
     &--image-mobile {
         display: none;
     }
+
+
 
 }
 
@@ -201,6 +209,19 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
             color: $text-color--main;
             max-width: 160px;
             margin:0;
+            position: relative;
+            &::after {
+                content: ' ';
+                background: url(assets/icons/verylongdash.svg);
+                display: block;
+                height: 4px;
+                width: 100px;
+                background-repeat: no-repeat;
+                background-size: auto;
+                position: absolute;
+                right: -150px;
+                top: 75%; 
+            }
         }
     }
 
@@ -390,11 +411,40 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     }
 }
 
+.tile_icon {
+    content: ' ';
+    display: block;
+    height: 70px;
+    width: 70px;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    background-color: $text-color--main;
+    position: absolute;
+    left: -35px;
+    top: -35px; 
+    &-idea {
+        background-image: url(assets/icons/idea.svg); 
+    }
+    &-design {
+        background-image: url(assets/icons/design.svg); 
+    }
+    &-portfolio {
+        background-image: url(assets/icons/portfolio.svg); 
+    }
+}
+
+
 .tile_content {
     background-color: $text-color--light;
     width: 84.18%;
     position: absolute;
     top: 295px;
+    //box-shadow: 5px 5px 5px #f9f9f9 ;
+    &-up {
+        top: 277px; 
+    }
+
     &-top {
         top: 0;
         left:-40px;
@@ -405,7 +455,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
         color: $text-color--darken;
         margin: 26px 0 10px 34px;
         &-right {
-            margin-left: 140px;
+            margin: 20px 0 20px 140px;
         }
         &-centered {
             margin-left: 0;
@@ -416,11 +466,11 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
 
     &--list {
         padding-inline-start: 0;
-        margin: 0 0 0 46px;
+        margin: 0 0 0 50px;
         padding: 0 0 60px 0px;
         &-no_marks {
             list-style:none;
-            padding:25px 30px 55px 20px;
+            padding:18px 30px 55px 20px;
             margin:0;
         }
         &-centered {
@@ -434,6 +484,10 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
         font: normal 15px 'FuturaBookC';
         color: $text-color--dark;
         line-height: 1.6em;
+        height: 1.6em;
+        &-large {
+            font: normal 18px 'FuturaBookC'; 
+        }
       
         
     }
@@ -524,7 +578,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     justify-content: center;
     padding: 0px 0px 0px 58px;
     margin-bottom: 50px;
- 
+    position: relative;
     
 }
 
@@ -540,6 +594,24 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
         font: normal 14px 'FuturaDemiC';
         text-transform: uppercase;
         color: $text-color--main;
+        text-decoration: none;
+        position: relative;
+        &:hover {
+            text-decoration: underline $text-color--main;
+        } 
+        &::after {
+            content: ' ';
+            background: url(assets/icons/longdash.svg);
+            display: block;
+            height: 51px;
+            width: 4px;
+            background-repeat: no-repeat;
+            background-size: auto;
+            position: absolute;
+            right: -40px;
+            top: -100%;
+            -webkit-transform: rotate(90deg);
+        }
     }
 }
 .main_content {
@@ -572,7 +644,49 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     }
 }
 
+.scroll {
+    position: absolute;
+    bottom: -50px;
+    left:-78px;
+    z-index: 10;
+    background-color: #131313;
+    width:250px;
+    height:100px;
+    &--text {
+        font: normal 14px 'Yeseva One';
+        color: $text-color--light;
+        text-transform: uppercase;
+        text-align: center;
+        margin-top:0;
+        margin-bottom: 0;
+        position: absolute;              
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        &::after {
+            content: ' ';
+            background: url(assets/icons/scrolldown.svg);
+            color: $text-color--main;
+            display: inline-block;
+            height: 29px;
+            width: 29px;
+            background-repeat: no-repeat;
+            background-size: auto;
+            position: absolute;
+            right: -70px;
+            top: 50%;
+            transform: translate(-100%,-50%);
+            
+        }
+    }
+  
+}
+
+
+
 .section_projects {
+   
     background-color: #131313;
     &_slider_controls {
         margin-top: 20px;
@@ -581,7 +695,20 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
 
 }
 
-
+.slider_header_projects {
+    position: relative;
+    &::after {
+        content: ' ';
+        background: url(assets/icons/verylongdash.svg);
+        width: 92px;
+        height: 1px;
+        background-size: auto;
+        display: block;
+        position: absolute;
+        right: -15px;
+        top: 80%;
+    }
+}
 
 .section_control {
     display: flex;
@@ -639,6 +766,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
             width: 200px;
             height: 50px;
             font-size: 15px;
+            padding-bottom: 1px;
         }
 
         &--checkbox {
@@ -666,7 +794,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
 
 .section_request {
     display: flex;
-    padding-bottom: 200px;
+    padding-bottom: 240px;
 }
 
 .bbb {
@@ -695,9 +823,8 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     left: -150px;
     overflow: hidden;
 }
-
 .circle_item {
-    //border: 30px solid $white;
+    
     box-sizing: content-box;
     position: absolute;
     background-color: #E3B873;
@@ -767,6 +894,31 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
 }
 .form_wrapper {
     padding-top: 105px;
+    display: flex;
+    flex-direction: column;
+}
+
+.savings_icon {
+    background: url(assets/icons/piggy.png);
+    width: 74px;
+    height: 74px;
+    height: 102;
+    margin: 30px 25px 0 32px;
+    display: block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: auto;
+        &::after {
+            content: 'Help save 10 - 20% of the cost of materials';
+    color: #E3B873;
+    font: normal 20px 'FuturaDemiC';
+    width: 220px;
+    display: block;
+    left: 100px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+        }
 }
 
 .section_fantasies {
@@ -811,6 +963,10 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
         font: normal normal 20px 'Proxima Nova';
         color:$text-color--light;
         line-height: 2em;
+        &-active {
+            color:$text-color--main;
+            text-decoration: underline;
+        }
        
     }
 }

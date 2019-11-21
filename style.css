@@ -42,6 +42,7 @@
   max-width: 1440px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  margin: 0 auto;
 }
 
 .header {
@@ -239,6 +240,11 @@
   margin-right: 20px;
 }
 
+.slider--image {
+  width: 100%;
+  height: auto;
+}
+
 .slider--image-mobile {
   display: none;
 }
@@ -268,6 +274,20 @@
   color: #E3B873;
   max-width: 160px;
   margin: 0;
+  position: relative;
+}
+
+.slider_mod1_header--header::after {
+  content: ' ';
+  background: url(assets/icons/verylongdash.svg);
+  display: block;
+  height: 4px;
+  width: 100px;
+  background-repeat: no-repeat;
+  background-size: auto;
+  position: absolute;
+  right: -150px;
+  top: 75%;
 }
 
 .slider_mod1--controls {
@@ -537,11 +557,41 @@
   display: none;
 }
 
+.tile_icon {
+  content: ' ';
+  display: block;
+  height: 70px;
+  width: 70px;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  background-color: #E3B873;
+  position: absolute;
+  left: -35px;
+  top: -35px;
+}
+
+.tile_icon-idea {
+  background-image: url(assets/icons/idea.svg);
+}
+
+.tile_icon-design {
+  background-image: url(assets/icons/design.svg);
+}
+
+.tile_icon-portfolio {
+  background-image: url(assets/icons/portfolio.svg);
+}
+
 .tile_content {
   background-color: #FFFFFF;
   width: 84.18%;
   position: absolute;
   top: 295px;
+}
+
+.tile_content-up {
+  top: 277px;
 }
 
 .tile_content-top {
@@ -557,7 +607,7 @@
 }
 
 .tile_content--header-right {
-  margin-left: 140px;
+  margin: 20px 0 20px 140px;
 }
 
 .tile_content--header-centered {
@@ -569,13 +619,13 @@
 .tile_content--list {
   -webkit-padding-start: 0;
           padding-inline-start: 0;
-  margin: 0 0 0 46px;
+  margin: 0 0 0 50px;
   padding: 0 0 60px 0px;
 }
 
 .tile_content--list-no_marks {
   list-style: none;
-  padding: 25px 30px 55px 20px;
+  padding: 18px 30px 55px 20px;
   margin: 0;
 }
 
@@ -590,6 +640,11 @@
   font: normal 15px 'FuturaBookC';
   color: #959595;
   line-height: 1.6em;
+  height: 1.6em;
+}
+
+.tile_content--item-large {
+  font: normal 18px 'FuturaBookC';
 }
 
 .tile_content--footer {
@@ -680,6 +735,7 @@
           justify-content: center;
   padding: 0px 0px 0px 58px;
   margin-bottom: 50px;
+  position: relative;
 }
 
 .sidebar {
@@ -700,6 +756,27 @@
   font: normal 14px 'FuturaDemiC';
   text-transform: uppercase;
   color: #E3B873;
+  text-decoration: none;
+  position: relative;
+}
+
+.sidebar--text:hover {
+  -webkit-text-decoration: underline #E3B873;
+          text-decoration: underline #E3B873;
+}
+
+.sidebar--text::after {
+  content: ' ';
+  background: url(assets/icons/longdash.svg);
+  display: block;
+  height: 51px;
+  width: 4px;
+  background-repeat: no-repeat;
+  background-size: auto;
+  position: absolute;
+  right: -40px;
+  top: -100%;
+  -webkit-transform: rotate(90deg);
 }
 
 .main_content {
@@ -746,12 +823,69 @@
   line-height: 1.5em;
 }
 
+.scroll {
+  position: absolute;
+  bottom: -50px;
+  left: -78px;
+  z-index: 10;
+  background-color: #131313;
+  width: 250px;
+  height: 100px;
+}
+
+.scroll--text {
+  font: normal 14px 'Yeseva One';
+  color: #FFFFFF;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.scroll--text::after {
+  content: ' ';
+  background: url(assets/icons/scrolldown.svg);
+  color: #E3B873;
+  display: inline-block;
+  height: 29px;
+  width: 29px;
+  background-repeat: no-repeat;
+  background-size: auto;
+  position: absolute;
+  right: -70px;
+  top: 50%;
+  -webkit-transform: translate(-100%, -50%);
+          transform: translate(-100%, -50%);
+}
+
 .section_projects {
   background-color: #131313;
 }
 
 .section_projects_slider_controls {
   margin-top: 20px;
+}
+
+.slider_header_projects {
+  position: relative;
+}
+
+.slider_header_projects::after {
+  content: ' ';
+  background: url(assets/icons/verylongdash.svg);
+  width: 92px;
+  height: 1px;
+  background-size: auto;
+  display: block;
+  position: absolute;
+  right: -15px;
+  top: 80%;
 }
 
 .section_control {
@@ -837,6 +971,7 @@
   width: 200px;
   height: 50px;
   font-size: 15px;
+  padding-bottom: 1px;
 }
 
 .section_control_form--checkbox {
@@ -871,7 +1006,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-bottom: 200px;
+  padding-bottom: 240px;
 }
 
 .bbb {
@@ -979,6 +1114,38 @@
 
 .form_wrapper {
   padding-top: 105px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.savings_icon {
+  background: url(assets/icons/piggy.png);
+  width: 74px;
+  height: 74px;
+  height: 102;
+  margin: 30px 25px 0 32px;
+  display: block;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.savings_icon::after {
+  content: 'Help save 10 - 20% of the cost of materials';
+  color: #E3B873;
+  font: normal 20px 'FuturaDemiC';
+  width: 220px;
+  display: block;
+  left: 100px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
 }
 
 .section_fantasies {
@@ -1018,6 +1185,11 @@
   font: normal normal 20px 'Proxima Nova';
   color: #FFFFFF;
   line-height: 2em;
+}
+
+.fant_list--link-active {
+  color: #E3B873;
+  text-decoration: underline;
 }
 
 .fantasies_images_left {
