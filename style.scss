@@ -86,6 +86,11 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
            }
        }
     }
+
+    &_play-mobile {
+        display:none;
+    }
+
     &_header {
         
         grid-area: header;
@@ -742,6 +747,9 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
         color: $text-color--light;
         margin: 1.5em 0 1.5em 0;
         line-height: 1.5em;
+        &-mobile {
+            display: none;
+        }
     }
 }
 
@@ -839,7 +847,9 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
         max-width: 673px;
         margin-bottom: 80px;
         line-height: 2em;
-      
+      &-mobile {
+        display:none;
+      }
     }
     &_form {
         display: flex;
@@ -1278,7 +1288,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
 
 
 @media (max-width: 375px) {
-.navbar, .sidebar, .section_clients, .section_request, .fantasies_content, .section_process, .footer, .fantasies_images_left, .fantasies_images_right, .scroll {
+.navbar, .sidebar, .section_clients, .section_request, .fant_list, .section_process, .footer, .fantasies_images_left, .fantasies_images_right, .scroll {
 
     display: none;
 }
@@ -1328,7 +1338,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     //display: flex;
     //flex-direction: column;
     align-items: flex-start;
-    margin-bottom: 165px;
+    margin-bottom: 180px;
     //position:relative;
     &--image-mobile {
         display:block;
@@ -1438,6 +1448,23 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     height: auto;
     margin: 0;
 
+    &_play-desktop {
+        display: none;
+    }
+     &_play-mobile {
+        display:block;
+        position: absolute;
+        top: 50%;
+        left: 93%;
+        transform: translate(-50%, -50%);
+        line-height: 0.6rem;
+        z-index: 20;
+        &-left {
+            left: 7%;
+        }
+     }
+     
+
     &_header {
         grid-area: header;
         padding-top: 20px;
@@ -1542,6 +1569,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
         //justify-content: space-between;
         //@at-rootoverflow: hidden;
         margin-bottom: 20px;
+        position: relative;
 
     }
     &--item {
@@ -1696,8 +1724,15 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     &--text {
         font: normal 18px 'FuturaBookC';
         color: $text-color--light;
-        margin: 1.5em 0 1.5em 0;
+        margin: 0.5em 0 1.5em 0;
         line-height: 1.5em;
+        &-desktop {
+            display: none;
+        }
+        &-mobile {
+            display:block;
+            margin-right: 30px;
+        }
     }
 }
 
@@ -1715,7 +1750,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     //display: flex;
     //flex-direction: column;
    // align-items: center;
-    margin-bottom: 55px;
+    margin-bottom: 35px;
     background: linear-gradient(180deg,#131313 0%, #131313 97%, white 97%, #FFFFFF 100%);
     padding: 0 18px 0 18px;
     &--header {
@@ -1728,10 +1763,12 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
         display:none;
         &-mobile {
             display:block;
+            line-height: 0.6rem;
+            margin-bottom: 20px;
         }
     }
     &--divider {
-        margin-bottom:15px;
+        margin-bottom:5px;
     }
 
 
@@ -1739,7 +1776,12 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
         //max-width: 375px;
         margin-bottom: 0;
         line-height: 1.5em;
-        
+    &-desktop {
+        display:none;
+    }  
+    &-mobile {
+        display:block;
+    }  
       
     }
     &_form {
