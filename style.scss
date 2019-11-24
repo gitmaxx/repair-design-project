@@ -1043,6 +1043,10 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
        
     }
 
+    &-mobile {
+        display: none;
+    }
+
 }
 
 .fantasies_wrapper {
@@ -1288,7 +1292,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
 
 
 @media (max-width: 375px) {
-.navbar, .sidebar, .section_clients, .section_request, .fant_list, .section_process, .footer, .fantasies_images_left, .fantasies_images_right, .scroll {
+.navbar, .sidebar, .section_clients, .section_request, .section_fantasies, .section_process, .footer, .scroll {
 
     display: none;
 }
@@ -1476,8 +1480,10 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
             font: normal 22px 'Yeseva One';
             //text-transform: uppercase;
             //color: $text-color--main;
-            width: 150px;
+            //width: 150px;
             text-align: center;
+            line-height: 1.5em;
+            margin-bottom:0;
         }
         &--text {
             font: normal 14px 'FuturaBookC';
@@ -1485,6 +1491,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
             max-width: 312px;
             line-height: 1.5em;
             text-align: center;
+            
         }
     }
 
@@ -1527,6 +1534,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
         //flex-wrap: wrap;
         max-width: 340px;
         padding-bottom: 20px;
+        padding-top: 20px;
     }
 
     &_descriptor {
@@ -1568,7 +1576,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
         //display: flex;
         //justify-content: space-between;
         //@at-rootoverflow: hidden;
-        margin-bottom: 20px;
+        //margin-bottom: 20px;
         position: relative;
 
     }
@@ -1752,7 +1760,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
    // align-items: center;
     margin-bottom: 35px;
     background: linear-gradient(180deg,#131313 0%, #131313 97%, white 97%, #FFFFFF 100%);
-    padding: 0 18px 0 18px;
+    padding: 20px 18px 0 18px;
     &--header {
         color: $text-color--light;
     }
@@ -1837,7 +1845,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     //display: flex;
     //flex-direction: column;
    // align-items: center;
-    //margin-bottom: 270px;
+    margin-bottom: 0;
     padding: 0 18px 0 18px;
     &--tiles {
         width: 100%;
@@ -1855,7 +1863,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
    // align-items: center;
    background: linear-gradient(180deg, white 0%, #181818 0%,  #181818 100%,);
     //padding-bottom: 270px;
-    padding: 0 18px 0 18px;
+    padding: 20px 18px 0 18px;
     
     &--tiles {
         width: 100%;
@@ -1877,9 +1885,37 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     }
 }
 
+.section_fantasies-mobile {
+    display: flex;
+    flex-direction: column;
+    padding: 0 18px 0 18px;    
+    background: linear-gradient(180deg, white 0%, white 65%, #131313  65%, #131313  100%);
+}
+
+.section_fantasies-mobile .slider_header {
+    padding-top: 0;
+    margin-top:0;
+    margin-bottom: 0;
+    align-items: top;
+    &--header {
+        margin-top:0;
+    }
+
+}
 
 
-
+.section_fantasies-mobile .slider {
+    display: grid;
+    grid-template-areas: 
+                        'header'
+                        'items';
+                        
+    grid-template-rows: 100px 241px ;
+    grid-template-columns: 100%;
+        //grid-gap: 10px;
+    height: auto;
+    margin: 0;
+}
 .section_team {
    // display: flex;
    // flex-direction: column;

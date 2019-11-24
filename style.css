@@ -1291,6 +1291,10 @@
   line-height: 1.386em;
 }
 
+.section_fantasies-mobile {
+  display: none;
+}
+
 .fantasies_wrapper {
   background: url(assets/images/room_backgr.png);
   background-repeat: no-repeat;
@@ -1602,7 +1606,7 @@
 }
 
 @media (max-width: 375px) {
-  .navbar, .sidebar, .section_clients, .section_request, .fant_list, .section_process, .footer, .fantasies_images_left, .fantasies_images_right, .scroll {
+  .navbar, .sidebar, .section_clients, .section_request, .section_fantasies, .section_process, .footer, .scroll {
     display: none;
   }
   .body_wrapper {
@@ -1765,8 +1769,9 @@
   }
   .slider_header--header {
     font: normal 22px 'Yeseva One';
-    width: 150px;
     text-align: center;
+    line-height: 1.5em;
+    margin-bottom: 0;
   }
   .slider_header--text {
     font: normal 14px 'FuturaBookC';
@@ -1811,6 +1816,7 @@
   .slider_descriptions {
     max-width: 340px;
     padding-bottom: 20px;
+    padding-top: 20px;
   }
   .slider_descriptor {
     width: 50%;
@@ -1843,7 +1849,6 @@
             filter: brightness(100%);
   }
   .slider--items {
-    margin-bottom: 20px;
     position: relative;
   }
   .slider--item {
@@ -2040,7 +2045,7 @@
     margin-bottom: 35px;
     background: -webkit-gradient(linear, left top, left bottom, from(#131313), color-stop(97%, #131313), color-stop(97%, white), to(#FFFFFF));
     background: linear-gradient(180deg, #131313 0%, #131313 97%, white 97%, #FFFFFF 100%);
-    padding: 0 18px 0 18px;
+    padding: 20px 18px 0 18px;
   }
   .section_control--header {
     color: #FFFFFF;
@@ -2139,6 +2144,7 @@
     margin-bottom: 60px;
   }
   .section_repair {
+    margin-bottom: 0;
     padding: 0 18px 0 18px;
   }
   .section_repair--tiles {
@@ -2150,7 +2156,7 @@
   .section_design {
     background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(0%, #181818), to(#181818));
     background: linear-gradient(180deg, white 0%, #181818 0%, #181818 100%);
-    padding: 0 18px 0 18px;
+    padding: 20px 18px 0 18px;
   }
   .section_design--tiles {
     width: 100%;
@@ -2168,6 +2174,40 @@
   }
   .section_design--header {
     color: #FFFFFF;
+  }
+  .section_fantasies-mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0 18px 0 18px;
+    background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(65%, white), color-stop(65%, #131313), to(#131313));
+    background: linear-gradient(180deg, white 0%, white 65%, #131313 65%, #131313 100%);
+  }
+  .section_fantasies-mobile .slider_header {
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    -webkit-box-align: top;
+        -ms-flex-align: top;
+            align-items: top;
+  }
+  .section_fantasies-mobile .slider_header--header {
+    margin-top: 0;
+  }
+  .section_fantasies-mobile .slider {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: 'header' 'items';
+    -ms-grid-rows: 100px 241px;
+        grid-template-rows: 100px 241px;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    height: auto;
+    margin: 0;
   }
   .section_team {
     -webkit-box-align: center;
