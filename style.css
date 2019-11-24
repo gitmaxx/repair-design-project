@@ -688,7 +688,7 @@
 
 .tile_content--list-centered {
   list-style: none;
-  padding: 10px 0px 40px 0px;
+  padding: 10px 0px 32px 0px;
   margin: 0;
   text-align: center;
 }
@@ -1468,7 +1468,7 @@
 }
 
 .section_team--divider {
-  margin-top: 130px;
+  margin-top: 120px;
 }
 
 .section_clients {
@@ -1704,7 +1704,7 @@
   }
   .tile_content--list-centered {
     list-style: none;
-    padding: 10px 0px 35px 0px;
+    padding: 10px 0px 25px 0px;
     margin: 0;
     text-align: center;
     font: normal 18px 'Yeseva One';
@@ -2163,6 +2163,9 @@
   .section_repair--icon {
     margin-bottom: 30px;
   }
+  .section_repair .tile_content {
+    width: 79.4%;
+  }
   .section_design {
     background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(0%, #181818), to(#181818));
     background: linear-gradient(180deg, white 0%, #181818 0%, #181818 100%);
@@ -2187,6 +2190,9 @@
   }
   .section_design .tile:first-child {
     margin-bottom: 120px;
+  }
+  .section_design .tile_content {
+    width: 79.4%;
   }
   .section_fantasies-mobile {
     display: -webkit-box;
@@ -2259,6 +2265,12 @@
   }
   .section_team--divider {
     display: none;
+  }
+  .section_team .tile_content {
+    width: 76.64%;
+  }
+  .section_team .tile {
+    margin-bottom: 140px;
   }
   .section_question {
     display: -webkit-box;

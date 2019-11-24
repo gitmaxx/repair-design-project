@@ -522,7 +522,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
         }
         &-centered {
             list-style:none;
-            padding:10px 0px 40px 0px;
+            padding:10px 0px 32px 0px;
             margin:0;
             text-align: center;
         }
@@ -1191,7 +1191,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
         margin-bottom:10px;
     }
     &--divider {
-        margin-top: 130px;
+        margin-top: 120px;
        
     }
 }
@@ -1400,7 +1400,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
         }
         &-centered {
             list-style:none;
-            padding:10px 0px 35px 0px;
+            padding:10px 0px 25px 0px;
             margin:0;
             text-align: center;
             font: normal 18px 'Yeseva One';
@@ -1865,6 +1865,9 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     }
 }
 
+.section_repair .tile_content {
+    width: 79.4%;
+}
 
 .section_design {
     //display: flex;
@@ -1897,6 +1900,12 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
 .section_design .tile:first-child {
     margin-bottom: 120px;
    }
+
+
+.section_design .tile_content {
+    width: 79.4%;
+}
+
 
 .section_fantasies-mobile {
     display: flex;
@@ -1974,7 +1983,13 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
        
     }
 }
+.section_team .tile_content {
+    width: 76.64%;
+}
 
+.section_team .tile {
+    margin-bottom: 140px;
+}
 
 
 .section_question {
