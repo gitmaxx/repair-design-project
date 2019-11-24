@@ -526,6 +526,9 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
             margin:0;
             text-align: center;
         }
+        &-mobile {
+            display: none;
+        }
     }
     &--item {
         font: normal 15px 'FuturaBookC';
@@ -1402,6 +1405,12 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
             text-align: center;
             font: normal 18px 'Yeseva One';
         }
+        &-desktop {
+            display: none;
+        }
+        &-mobile {
+            display: block;
+        }
     }
     &--item {
         font: normal 13px 'FuturaBookC';
@@ -1885,6 +1894,10 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     }
 }
 
+.section_design .tile:first-child {
+    margin-bottom: 120px;
+   }
+
 .section_fantasies-mobile {
     display: flex;
     flex-direction: column;
@@ -1923,7 +1936,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     background: linear-gradient(180deg, $text-color--darkest 100% );
     //padding-top: 200px;
   margin-bottom: 0;
-   padding: 130px 18px 0 18px;
+   padding: 15px 18px 0 18px;
     &--header {
         max-width: 100%;
        

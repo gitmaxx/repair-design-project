@@ -693,6 +693,10 @@
   text-align: center;
 }
 
+.tile_content--list-mobile {
+  display: none;
+}
+
 .tile_content--item {
   font: normal 15px 'FuturaBookC';
   color: #959595;
@@ -1705,6 +1709,12 @@
     text-align: center;
     font: normal 18px 'Yeseva One';
   }
+  .tile_content--list-desktop {
+    display: none;
+  }
+  .tile_content--list-mobile {
+    display: block;
+  }
   .tile_content--item {
     font: normal 13px 'FuturaBookC';
     color: #959595;
@@ -2175,6 +2185,9 @@
   .section_design--header {
     color: #FFFFFF;
   }
+  .section_design .tile:first-child {
+    margin-bottom: 120px;
+  }
   .section_fantasies-mobile {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2216,7 +2229,7 @@
     background: -webkit-gradient(linear, left top, left bottom, to(#181818));
     background: linear-gradient(180deg, #181818 100%);
     margin-bottom: 0;
-    padding: 130px 18px 0 18px;
+    padding: 15px 18px 0 18px;
   }
   .section_team--header {
     max-width: 100%;
