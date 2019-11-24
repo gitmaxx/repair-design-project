@@ -1560,6 +1560,10 @@
   margin: 30px 0 43px 0;
 }
 
+.section_address_icons-mobile {
+  display: none;
+}
+
 .section_address--icon {
   padding: 0 7px 0 7px;
   fill: #E3B873;
@@ -2289,6 +2293,12 @@
   .section_address--content {
     font: normal 18px 'Yeseva One';
     max-width: 310px;
+  }
+  .section_address_icons-desktop {
+    display: none;
+  }
+  .section_address_icons-mobile {
+    display: block;
   }
   .section_address--map-mobile {
     display: block;

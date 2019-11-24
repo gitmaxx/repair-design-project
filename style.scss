@@ -1251,6 +1251,9 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     }
     &_icons{
         margin: 30px 0 43px 0;
+        &-mobile {
+            display: none;
+        }
     }
     &--icon {
         padding: 0 7px 0 7px;
@@ -2014,12 +2017,14 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
      //  text-align: center;
      //  line-height: 1.5em;
     }
-   // &_icons{
-   //     margin: 30px 0 43px 0;
-   // }
-    //&--icon {
-    //    padding: 0 7px 0 7px;
-   // }
+   &_icons{
+       &-desktop {
+           display: none;
+       }
+       &-mobile {
+        display: block;
+    }
+   }
     &--map-mobile {
         display: block;
     }
