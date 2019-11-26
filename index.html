@@ -11,6 +11,7 @@
     <div class="body_wrapper">
     <header class="header">
         <h1 class="header--logo">IC "Repair Design Project"</h1>
+        <div class="flex_divider"></div>
         <nav class="navbar">
             <ul class="navbar_list">
                 <li class="navbar_list--item"><a class="navbar_list--link">Home</a></li>
@@ -51,12 +52,6 @@
         </section>
         <section class="section section_projects">
             <div class="slider">
-                    <div class="slider_play slider_play-desktop">
-                        <svg class="slider_play--svg" width="85" height="85" viewBox="0 0 85 85" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="42.3591" cy="42.3605" r="27.3586""/>
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M39.9792 34.0342L48.3066 42.3607L39.9792 50.6872L38.7905 49.4986L45.9291 42.3607L38.7905 35.2228L39.9792 34.0342Z" fill="white" stroke="white" stroke-width="0.75"/>
-                        </svg>        
-                    </div>
                     
                     <div class="slider_header">
                             <h2 class="slider_header--header slider_header_projects">Completed projects</h2>
@@ -118,7 +113,12 @@
                     
 
                     <div class="slider--items">
-                      
+                            <div class="slider_play slider_play-desktop">
+                                    <svg class="slider_play--svg" width="85" height="85" viewBox="0 0 85 85" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="42.3591" cy="42.3605" r="27.3586""/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M39.9792 34.0342L48.3066 42.3607L39.9792 50.6872L38.7905 49.4986L45.9291 42.3607L38.7905 35.2228L39.9792 34.0342Z" fill="white" stroke="white" stroke-width="0.75"/>
+                                    </svg>        
+                            </div>
                             <div class="slider_play slider_play-mobile slider_play-mobile-left">
                                     <svg class="slider_play--svg" width="36" height="36" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="17.9999" cy="17.9999" r="18.0001" transform="rotate(-180 17.9999 17.9999)""/>
@@ -137,6 +137,7 @@
                         <div class="slider--item slider--item-active">
                             <img src='assets/images/admiral.png' class="slider--image">
                             <img src='assets/images/admiral_mobile.png' class="slider--image-mobile">
+                            
                       </div>
                       <div class="slider--item">
                             <img src='assets/images/sochi.png' class="slider--image">
@@ -191,7 +192,7 @@
             <img src='assets/icons/hammer.svg' class="section_repair--icon">
             <div class="tiles_block section_repair--tiles">
                 <div class="tile">
-                    <img src='assets/images/wall.png' class="tile--image">
+                    <img src='assets/images/wall.png' class="tile--image scalable">
                     <img src='assets/images/wall_mobile.png' class="tile--image-mobile">
                     <div class="tile_content">
                         <p class="tile_content--header">Redecorating</p>
@@ -208,7 +209,7 @@
                     </div>
                 </div>
                 <div class="tile">
-                    <img src='assets/images/room.png' class="tile--image">
+                    <img src='assets/images/room.png' class="tile--image scalable">
                     <img src='assets/images/room_mobile.png' class="tile--image-mobile">
                      <div class="tile_content">
                         <p class="tile_content--header">Overhaul</p>
@@ -225,7 +226,7 @@
                     </div>
                 </div>
                 <div class="tile">
-                    <img src='assets/images/lamp.png' class="tile--image">
+                    <img src='assets/images/lamp.png' class="tile--image scalable">
                     <img src='assets/images/lamp_mobile.png' class="tile--image-mobile">
                     <div class="tile_content">
                         <p class="tile_content--header">Designer Repair</p>
@@ -245,7 +246,7 @@
         </section>
         <section class="section section_request">
             
-            <div class="bbb"> 
+            <div class="section_request--image"> 
                 <div class="circle"></div>
                 <div class="circle_item circle_item-first">01</div>
                 <div class="circle_item circle_item-second">02</div>
@@ -372,7 +373,7 @@
            <p class="section_content section_design--content">Design project not only helps to make the repair of your apartment more modern, <br> but also significantly reduces the cost of materials and reduces the time of repair work.</p>
             <div class="tiles_block section_design--tiles">
                 <div class="tile">
-                    <img src='assets/images/wall_dark.png' class="tile--image">
+                    <img src='assets/images/wall_dark.png' class="tile--image scalable">
                     <img src='assets/images/wall_dark_mobile.png' class="tile--image-mobile">
                     <div class="tile_content">
                             <p class="tile_content--header">Mini</p>
@@ -386,7 +387,7 @@
                     </div>
                 </div>
                 <div  class="tile">
-                    <img src='assets/images/lamp_dark.png' class="tile--image">
+                    <img src='assets/images/lamp_dark.png' class="tile--image scalable">
                     <img src='assets/images/lamp_dark_mobile.png' class="tile--image-mobile">
                     <div class="tile_content">
                             <p class="tile_content--header">Standard</p>
@@ -403,7 +404,7 @@
                         </div>
                 </div>
                 <div  class="tile">
-                    <img src='assets/images/room_dark.png' class="tile--image">
+                    <img src='assets/images/room_dark.png' class="tile--image scalable">
                     <img src='assets/images/room_dark_mobile.png' class="tile--image-mobile">
                     <div class="tile_content">
                             <p class="tile_content--header">Full</p>
@@ -554,9 +555,9 @@
             <img src='assets/icons/handshake.svg' class="section_clients--icon">
             <p class="section_content section_clients--content">80% of our customers recommend us to their friends and family.</p>
             <div class="tiles_block section_clients--tiles">
-                <div class="tile ">
+                <div class="tile">
                     <img src='assets/images/fedosova.png' class="section_clients--photo">
-                    <div class="tile_content tile_content-top tile_content-large tile_content-shadow">
+                    <div class="tile_content tile_content-client  tile_content-shadow">
                         <p class="tile_content--header tile_content--header-right">Fedosova Maria Konstantinovna</p>
                         <ul class="tile_content--list tile_content--list-no_marks">
                             <li class="tile_content--item">I want to thank the guys for their work. We put your shower part in repair. I am very grateful that I referred to the repair as to my own. Great thanks i express the project to georgia for its professionalism and approach. The repair process was turned out in terms, faster than anticipated. Team mobile and professional. Works performed qualitatively without comments. Quality satisfied. Prices democratic. I recommend these masters.</li>
@@ -570,7 +571,7 @@
                 </div>
                 <div class="tile">
                     <img src='assets/images/afanasyev.png' class="section_clients--photo">
-                    <div class="tile_content tile_content-top tile_content-large tile_content-shadow">
+                    <div class="tile_content tile_content-client tile_content-shadow">
                             <p class="tile_content--header tile_content--header-right">Afanasyev Sergey Alexandrovich</p>
                             <ul class="tile_content--list tile_content--list-no_marks">
                                 <li class="tile_content--item">I want to thank the guys for their work. We put your shower part in repair. I am very grateful that I referred to the repair as to my own. Great thanks i express the project to georgia for its professionalism and approach. The repair process was turned out in terms, faster than anticipated. Team mobile and professional. Works performed qualitatively without comments. Quality satisfied. Prices democratic. I recommend these masters.</li>
@@ -584,7 +585,9 @@
                 </div>
                 <div class="tile">
                     <img src='assets/images/kiriev.png' class="section_clients--photo">
-                    <div class="tile_content tile_content-top tile_content-large tile_content-shadow">
+                    <div class="tile_content tile_content-client tile_content-shadow">
+                        
+                        
                         <p class="tile_content--header tile_content--header-right">Kiriev Egor <br> Leonidovich</p>
                         <ul class="tile_content--list tile_content--list-no_marks section_clients--tile_content_list">
                             <li class="tile_content--item">I want to thank the guys for their work. We put your shower part in repair. I am very grateful that I referred to the repair as to my own. Great thanks i express the project to georgia for its professionalism and approach. The repair process was turned out in terms, faster than anticipated. Team mobile and professional. Works performed qualitatively without comments. Quality satisfied. Prices democratic. I recommend these masters.</li>

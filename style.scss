@@ -17,23 +17,35 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     margin: 0 auto;
 }
 
+.flex_divider {
+    flex:1;
+    max-width: 0px;
+    
+}
+
+.scalable {
+    width: 100%;
+    height: auto;
+}
 .header {
     max-width: 1440px;
     height:83px;
     margin: 0 auto;
     display: flex;
     background-color: #131313;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    padding: 0 calc(14.4px + 6% - (1440px - 100%) * 0.2) 0 calc(4.4px + 4.7% - (1440px - 100%) * 0.2);
     &--button {
         width: 161px;
         height: 37px;
+        margin: 0 10px 0 0;
     }
     &--logo {
         font: normal 14px 'FuturaDemiC';
         text-transform: uppercase;
         color: $text-color--main;
-        margin-left: 62px;
+        margin: 0 10px 0 10px;
     }
 }
 
@@ -68,13 +80,13 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     grid-template-columns: 36.79% 63.21%;
         //grid-gap: 10px;
     height: 600px;
-    margin: 0 0 0 7%;
+    margin: 0 0 0 calc(14.4px + 6% - (1440px - 100%) * 0.15);
     position: relative;
 
     &_play {
        position: absolute;
        top: 50%;
-       left: 93%;
+       left: 90%;
        transform: translate(-50%, -50%);
        line-height: 0.6rem;
        z-index: 20;
@@ -94,7 +106,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     &_header {
         
         grid-area: header;
-        padding-top: 40px;
+        padding-top: 8%;
         &--header {
             font: normal 27px 'Yeseva One';
             text-transform: uppercase;
@@ -201,11 +213,14 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
         display: flex;
         justify-content: space-between;
         overflow: hidden;
+        position: relative;
+        height: fit-content;
         
 
     }
     &--item {
         margin-right: 20px;
+   
     }
     &--image {
         width: 100%;
@@ -336,7 +351,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
         
     }
     &--item {
-        margin-right: 20px;
+        //margin-right: 20px;
     }
 
 }
@@ -474,22 +489,16 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     width: 84.18%;
     position: absolute;
     top: 295px;
-    //box-shadow: 5px 5px 5px #f9f9f9 ;
     &-up {
         top: 277px; 
     }
 
-    &-top {
-        top: 0;
-        left:-40px;
-        width: 376px;
-    }
-
-    &-large {
+    &-client {
         height: 404px;
         padding: 24px 0 0 0;
-        top: -24px;
-        left:-20px;
+        position: relative;
+        width: 100%;
+        top: 0;
     }
     
     &-shadow {
@@ -636,8 +645,12 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     text-align: center;
     list-style: none;
     justify-content: space-between;
+    padding:0;
     &--item {
-        margin-right: 47px;
+        margin-left: 47px;
+        &:first-child {
+            margin-left: 0;
+        }
     }
 }
 
@@ -665,12 +678,15 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
 //    background-color: none;
 //}
 
-.phone_number--link {
+.phone_number{
+    margin: 0 10px 0 10px;
+    min-width: fit-content;
+    &--link {
     font: normal 14px 'FuturaDemiC';
     color: $text-color--main;
     text-decoration: underline;
 }
-
+}
 
 .main_image {
     background: url(assets/images/section1.png);
@@ -898,8 +914,9 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     flex-direction: column;
     align-items: center;
     margin-bottom: 270px;
+    padding: 0 calc(14.4px + 6% - (1440px - 100%) * 0.3) 0 calc(14.4px + 6% - (1440px - 100%) * 0.3);
     &--tiles {
-        width: 1236px;
+        width: 100%;
         
     }
     &--icon {
@@ -907,22 +924,28 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     }
 }
 
+.section_repair--tiles .tile:first-child {
+    margin-right: 10px;
+}
+
+.section_repair--tiles .tile:nth-child(2){
+    margin-right: 10px;
+}
+
+
 .section_request {
     display: flex;
     padding-bottom: 240px;
+    &--image {
+        background-image: url(assets/images/building.png);
+        background-repeat: no-repeat;
+        width: 57.77%;
+        max-height: 707px;
+        height: calc(100vw*0.52138643067);
+        position: relative;
+        overflow: hidden;
+    }
 }
-
-.bbb {
-    background-image: url(assets/images/building.png);
-    background-repeat: no-repeat;
-    background-size: top;
-    width: 57.77%;
-    max-height: 707px;
-    height: calc(100vw*0.52138643067);
-    position: relative;
-    overflow: hidden;
-}
-
 
 .circle {  
     width: 630px;
@@ -1037,14 +1060,21 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
 }
 
 .section_fantasies {
-    margin-bottom: 145px;
+    margin-bottom: 135px;
+    background: url(assets/images/room_backgr.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0 0 0 calc(14.4px + 6% - (1440px - 100%) * 0.1);
     &--header {
         font-size: 27px;
         color:$text-color--main;
         line-height: 1.386em;
+        margin:0 0 6% 0;
         
        
     }
+
+
 
     &-mobile {
         display: none;
@@ -1054,9 +1084,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
 
 .fantasies_wrapper {
 
-    background: url(assets/images/room_backgr.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+    
     width: 100%;
     //background-color: #131313;
     max-height: 865px;
@@ -1066,7 +1094,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
 }
 
 .fantasies_content {
-    margin: 137px 0 0 100px;
+    margin: calc(4% - (865px - 100%) * 0.17) 0 0 0;
     width:40%;
 }
 
@@ -1076,6 +1104,11 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     //text-align: center;
     list-style: none;
     padding: 0 0 0 0;
+    //line-height: 3;
+    margin:5px 0 0 0;
+    &--item {
+        margin: 0 0 1.7% 0;
+    }
     //justify-content: space-between;
   
     &--link {
@@ -1090,28 +1123,51 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     }
 }
 
+
 .fantasies_images_left {
-    display: flex;
-    flex-direction: column;
+    //display: flex;
+    //flex-direction: column;
     position: absolute;
     top: -41px;
-    left: 41%;
+    //left: calc(38% - (1440px - 100%) * 0.2);
+    left:36%;
+    width: 26.4337%;
+    height: auto;
 }
+
+
 
 .fantasies_images_right {
     display: flex;
     flex-direction: column;
     position: absolute;
     top: -113px;
-    left: 68.6%;
+    left: 66%;
+    width: 26.4337%;
+    height: auto;
 }
 
 .fantasies_image_left_top {
     margin-bottom: 39px;
+    width: 100%;
+    height: auto;
+
+}
+
+.fantasies_image_left_bottom {
+    width: 100%;
+    height: auto;
 }
 
 .fantasies_image_right_top {
     margin-bottom: 37px;
+    width: 100%;
+    height: auto;
+}
+
+.fantasies_image_right_bottom {
+    width: 100%;
+    height: auto;
 }
 
 .section_design {
@@ -1119,9 +1175,10 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     flex-direction: column;
     align-items: center;
     background: linear-gradient(180deg, white 50%, #131313 50%);
-    padding-bottom: 270px;
+    //padding-bottom: 270px;
+    padding: 0 calc(14.4px + 6% - (1440px - 100%) * 0.3) 270px calc(14.4px + 6% - (1440px - 100%) * 0.3);
     &--tiles {
-        width: 1236px;
+        width: 100%;
        
     }
     &--content {
@@ -1135,11 +1192,20 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
 }
 
 
+.section_design--tiles .tile:first-child {
+    margin-right: 10px;
+}
+
+.section_design--tiles .tile:nth-child(2){
+    margin-right: 10px;
+}
+
 .section_process {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0 7% 0 7%;
+    padding: 0 calc(14.4px + 6% - (1440px - 100%) * 0.15) 0 calc(14.4px + 6% - (1440px - 100%) * 0.15);
+    //padding: 0 7% 0 7%;
     background-color: #131313;
    // margin-bottom: 400px;
    &--header {
@@ -1160,7 +1226,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     flex-direction: column;
     align-items: center;
     background: linear-gradient(180deg,#131313 50%, white 50%);
-    padding-top: 95px;
+    padding: 95px calc(44px + 10% - (1440px - 100%) * 0.25) 0 calc(44px + 10% - (1440px - 100%) * 0.25);
     margin-bottom: 50px;
     &--header {
         max-width: 109px;
@@ -1182,7 +1248,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
         
     
     &--tiles {
-        width: 1063px;
+        width: 100%;
         //display: flex;
         //flex-direction: row;
         //justify-content: space-between;
@@ -1197,35 +1263,57 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
 }
 
 
+.section_team--tiles .tile:first-child {
+    margin-right: 40px;
+}
+
+.section_team--tiles .tile:nth-child(2){
+    margin-right: 40px;
+}
+
+.section_team--tiles .tile_content {
+    width: 85.66%;
+}
+
+
 .section_clients {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom:482px;
-    padding: 0 121px 0 121px;
+    margin-bottom:158px;
+    padding: 0 calc(14px + 6.1% - (1440px - 100%) * 0.15) 0 calc(14px + 6.1% - (1440px - 100%) * 0.15);
+
     &--header {
         max-width: 150px;
     }
     &--content {
         max-width: 380px;
         line-height: 1.38em;
-        margin-bottom: 74px;
-        &-padded {
-            padding-top: 150px;
-        }
+        margin-bottom: 42px;
+       // &-padded {
+       //     padding-top: 150px;
+       // }
         
     }
     &--tiles {
-        width: 943px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-self: flex-start;
-        
+        width: 100%;
+        margin: 0 10px 0 10px;
+        //display: flex;
+        //flex-direction: row;
+        //justify-content: space-between;
+        //align-self: flex-start;
     }
+
    &--photo {
        z-index: 10;
+       position: absolute;
+       top: 24px;
+       left: 20px;
    }
+}
+
+.section_clients .tile {
+    width: 30.42%;
 }
 
 .section_question {
@@ -1287,15 +1375,66 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     &--button {
         width: 161px;
         height: 37px;
+        margin: 0 10px 0 0;
     }
     &--logo {
         font: normal 14px 'FuturaDemiC';
         text-transform: uppercase;
         color: $text-color--main;
-        margin-left: 62px;
+        margin: 0 10px 0 10px;
     }
 }
 
+
+@media (max-width: 1366px) {
+.tile_content--footer-medium {
+    width: 100%;
+}
+
+.circle_item-first::after {
+    width: 300px;
+}
+.circle_item-fourth::after {
+    width: 220px;
+}
+
+
+}
+
+@media (max-width: 1200px) {
+    .section_fantasies--header {
+        font-size: 24px;
+        line-height: 1.15;
+        margin: 0;
+    }
+
+    .section_request {
+        justify-content: center;
+    padding-bottom: 180px;
+    &--image {
+        display: none;
+    }
+}
+
+.section_request  .form_wrapper {
+    padding-top: 55px;
+}
+.fant_list--item {
+    margin: 0 0 5px 0;
+}
+
+.fant_list--link {
+    font-size: 18px;
+}
+
+.section_design--tiles .tile:nth-child(3) .tile_content--list-desktop {
+    display: none;
+}
+
+.section_design--tiles .tile:nth-child(3) .tile_content--list-mobile {
+    display: block;
+}
+}
 
 @media (max-width: 375px) {
 .navbar, .sidebar, .section_clients, .section_request, .section_fantasies, .section_process, .footer, .scroll {
@@ -1305,7 +1444,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
 
 
 .body_wrapper {
-    max-width: 1440px;
+    max-width: 375px;
     box-sizing: border-box;
 }
 
@@ -1372,11 +1511,11 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     &-adjusted {
       top: 275px;
     }
-    &-top {
-        top: 0;
-        left:-40px;
-        width: 376px;
-    }
+   // &-top {
+    //    top: 0;
+    //    left:-40px;
+    //    width: 376px;
+   // }
     &--header{
         font: normal 15px 'Yeseva One';
         //color: $text-color--darken;
@@ -1993,6 +2132,16 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
 .section_team .tile {
     margin-bottom: 140px;
 }
+
+
+.section_team--tiles .tile:first-child {
+    margin-right: 0;
+}
+
+.section_team--tiles .tile:nth-child(2){
+    margin-right: 0;
+}
+
 
 
 .section_question {

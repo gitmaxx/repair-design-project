@@ -45,6 +45,18 @@
   margin: 0 auto;
 }
 
+.flex_divider {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  max-width: 0px;
+}
+
+.scalable {
+  width: 100%;
+  height: auto;
+}
+
 .header {
   max-width: 1440px;
   height: 83px;
@@ -53,23 +65,26 @@
   display: -ms-flexbox;
   display: flex;
   background-color: #131313;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 0 calc(14.4px + 6% - (1440px - 100%) * 0.2) 0 calc(4.4px + 4.7% - (1440px - 100%) * 0.2);
 }
 
 .header--button {
   width: 161px;
   height: 37px;
+  margin: 0 10px 0 0;
 }
 
 .header--logo {
   font: normal 14px 'FuturaDemiC';
   text-transform: uppercase;
   color: #E3B873;
-  margin-left: 62px;
+  margin: 0 10px 0 10px;
 }
 
 .section {
@@ -99,14 +114,14 @@
   -ms-grid-columns: 36.79% 63.21%;
       grid-template-columns: 36.79% 63.21%;
   height: 600px;
-  margin: 0 0 0 7%;
+  margin: 0 0 0 calc(14.4px + 6% - (1440px - 100%) * 0.15);
   position: relative;
 }
 
 .slider_play {
   position: absolute;
   top: 50%;
-  left: 93%;
+  left: 90%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   line-height: 0.6rem;
@@ -130,7 +145,7 @@
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: header;
-  padding-top: 40px;
+  padding-top: 8%;
 }
 
 .slider_header--header {
@@ -279,6 +294,10 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   overflow: hidden;
+  position: relative;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .slider--item {
@@ -440,10 +459,6 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   overflow: hidden;
-}
-
-.slider_mod1--item {
-  margin-right: 20px;
 }
 
 .form {
@@ -639,17 +654,12 @@
   top: 277px;
 }
 
-.tile_content-top {
-  top: 0;
-  left: -40px;
-  width: 376px;
-}
-
-.tile_content-large {
+.tile_content-client {
   height: 404px;
   padding: 24px 0 0 0;
-  top: -24px;
-  left: -20px;
+  position: relative;
+  width: 100%;
+  top: 0;
 }
 
 .tile_content-shadow {
@@ -808,10 +818,15 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding: 0;
 }
 
 .navbar_list--item {
-  margin-right: 47px;
+  margin-left: 47px;
+}
+
+.navbar_list--item:first-child {
+  margin-left: 0;
 }
 
 .navbar_list--link {
@@ -829,6 +844,13 @@
   color: #FFFFFF;
   font: normal normal normal 13px "FuturaDemiC";
   text-transform: uppercase;
+}
+
+.phone_number {
+  margin: 0 10px 0 10px;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
 }
 
 .phone_number--link {
@@ -1129,14 +1151,23 @@
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 270px;
+  padding: 0 calc(14.4px + 6% - (1440px - 100%) * 0.3) 0 calc(14.4px + 6% - (1440px - 100%) * 0.3);
 }
 
 .section_repair--tiles {
-  width: 1236px;
+  width: 100%;
 }
 
 .section_repair--icon {
   margin-bottom: 30px;
+}
+
+.section_repair--tiles .tile:first-child {
+  margin-right: 10px;
+}
+
+.section_repair--tiles .tile:nth-child(2) {
+  margin-right: 10px;
 }
 
 .section_request {
@@ -1146,10 +1177,9 @@
   padding-bottom: 240px;
 }
 
-.bbb {
+.section_request--image {
   background-image: url(assets/images/building.png);
   background-repeat: no-repeat;
-  background-size: top;
   width: 57.77%;
   max-height: 707px;
   height: calc(100vw*0.52138643067);
@@ -1286,13 +1316,18 @@
 }
 
 .section_fantasies {
-  margin-bottom: 145px;
+  margin-bottom: 135px;
+  background: url(assets/images/room_backgr.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0 0 0 calc(14.4px + 6% - (1440px - 100%) * 0.1);
 }
 
 .section_fantasies--header {
   font-size: 27px;
   color: #E3B873;
   line-height: 1.386em;
+  margin: 0 0 6% 0;
 }
 
 .section_fantasies-mobile {
@@ -1300,9 +1335,6 @@
 }
 
 .fantasies_wrapper {
-  background: url(assets/images/room_backgr.png);
-  background-repeat: no-repeat;
-  background-size: cover;
   width: 100%;
   max-height: 865px;
   height: calc(100vw*0.6015299);
@@ -1313,13 +1345,18 @@
 }
 
 .fantasies_content {
-  margin: 137px 0 0 100px;
+  margin: calc(4% - (865px - 100%) * 0.17) 0 0 0;
   width: 40%;
 }
 
 .fant_list {
   list-style: none;
   padding: 0 0 0 0;
+  margin: 5px 0 0 0;
+}
+
+.fant_list--item {
+  margin: 0 0 1.7% 0;
 }
 
 .fant_list--link {
@@ -1334,16 +1371,11 @@
 }
 
 .fantasies_images_left {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   position: absolute;
   top: -41px;
-  left: 41%;
+  left: 36%;
+  width: 26.4337%;
+  height: auto;
 }
 
 .fantasies_images_right {
@@ -1356,15 +1388,31 @@
           flex-direction: column;
   position: absolute;
   top: -113px;
-  left: 68.6%;
+  left: 66%;
+  width: 26.4337%;
+  height: auto;
 }
 
 .fantasies_image_left_top {
   margin-bottom: 39px;
+  width: 100%;
+  height: auto;
+}
+
+.fantasies_image_left_bottom {
+  width: 100%;
+  height: auto;
 }
 
 .fantasies_image_right_top {
   margin-bottom: 37px;
+  width: 100%;
+  height: auto;
+}
+
+.fantasies_image_right_bottom {
+  width: 100%;
+  height: auto;
 }
 
 .section_design {
@@ -1380,11 +1428,11 @@
           align-items: center;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, white), color-stop(50%, #131313));
   background: linear-gradient(180deg, white 50%, #131313 50%);
-  padding-bottom: 270px;
+  padding: 0 calc(14.4px + 6% - (1440px - 100%) * 0.3) 270px calc(14.4px + 6% - (1440px - 100%) * 0.3);
 }
 
 .section_design--tiles {
-  width: 1236px;
+  width: 100%;
 }
 
 .section_design--content {
@@ -1395,6 +1443,14 @@
 
 .section_design--icon {
   margin-bottom: 15px;
+}
+
+.section_design--tiles .tile:first-child {
+  margin-right: 10px;
+}
+
+.section_design--tiles .tile:nth-child(2) {
+  margin-right: 10px;
 }
 
 .section_process {
@@ -1408,7 +1464,7 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  padding: 0 7% 0 7%;
+  padding: 0 calc(14.4px + 6% - (1440px - 100%) * 0.15) 0 calc(14.4px + 6% - (1440px - 100%) * 0.15);
   background-color: #131313;
 }
 
@@ -1436,7 +1492,7 @@
           align-items: center;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #131313), color-stop(50%, white));
   background: linear-gradient(180deg, #131313 50%, white 50%);
-  padding-top: 95px;
+  padding: 95px calc(44px + 10% - (1440px - 100%) * 0.25) 0 calc(44px + 10% - (1440px - 100%) * 0.25);
   margin-bottom: 50px;
 }
 
@@ -1460,7 +1516,7 @@
 }
 
 .section_team--tiles {
-  width: 1063px;
+  width: 100%;
 }
 
 .section_team--icon {
@@ -1469,6 +1525,18 @@
 
 .section_team--divider {
   margin-top: 120px;
+}
+
+.section_team--tiles .tile:first-child {
+  margin-right: 40px;
+}
+
+.section_team--tiles .tile:nth-child(2) {
+  margin-right: 40px;
+}
+
+.section_team--tiles .tile_content {
+  width: 85.66%;
 }
 
 .section_clients {
@@ -1482,8 +1550,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 482px;
-  padding: 0 121px 0 121px;
+  margin-bottom: 158px;
+  padding: 0 calc(14px + 6.1% - (1440px - 100%) * 0.15) 0 calc(14px + 6.1% - (1440px - 100%) * 0.15);
 }
 
 .section_clients--header {
@@ -1493,31 +1561,23 @@
 .section_clients--content {
   max-width: 380px;
   line-height: 1.38em;
-  margin-bottom: 74px;
-}
-
-.section_clients--content-padded {
-  padding-top: 150px;
+  margin-bottom: 42px;
 }
 
 .section_clients--tiles {
-  width: 943px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+  width: 100%;
+  margin: 0 10px 0 10px;
 }
 
 .section_clients--photo {
   z-index: 10;
+  position: absolute;
+  top: 24px;
+  left: 20px;
+}
+
+.section_clients .tile {
+  width: 30.42%;
 }
 
 .section_question {
@@ -1604,13 +1664,58 @@
 .footer--button {
   width: 161px;
   height: 37px;
+  margin: 0 10px 0 0;
 }
 
 .footer--logo {
   font: normal 14px 'FuturaDemiC';
   text-transform: uppercase;
   color: #E3B873;
-  margin-left: 62px;
+  margin: 0 10px 0 10px;
+}
+
+@media (max-width: 1366px) {
+  .tile_content--footer-medium {
+    width: 100%;
+  }
+  .circle_item-first::after {
+    width: 300px;
+  }
+  .circle_item-fourth::after {
+    width: 220px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .section_fantasies--header {
+    font-size: 24px;
+    line-height: 1.15;
+    margin: 0;
+  }
+  .section_request {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-bottom: 180px;
+  }
+  .section_request--image {
+    display: none;
+  }
+  .section_request .form_wrapper {
+    padding-top: 55px;
+  }
+  .fant_list--item {
+    margin: 0 0 5px 0;
+  }
+  .fant_list--link {
+    font-size: 18px;
+  }
+  .section_design--tiles .tile:nth-child(3) .tile_content--list-desktop {
+    display: none;
+  }
+  .section_design--tiles .tile:nth-child(3) .tile_content--list-mobile {
+    display: block;
+  }
 }
 
 @media (max-width: 375px) {
@@ -1618,7 +1723,7 @@
     display: none;
   }
   .body_wrapper {
-    max-width: 1440px;
+    max-width: 375px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
@@ -1683,11 +1788,6 @@
   }
   .tile_content-adjusted {
     top: 275px;
-  }
-  .tile_content-top {
-    top: 0;
-    left: -40px;
-    width: 376px;
   }
   .tile_content--header {
     font: normal 15px 'Yeseva One';
@@ -2275,6 +2375,12 @@
   }
   .section_team .tile {
     margin-bottom: 140px;
+  }
+  .section_team--tiles .tile:first-child {
+    margin-right: 0;
+  }
+  .section_team--tiles .tile:nth-child(2) {
+    margin-right: 0;
   }
   .section_question {
     display: -webkit-box;
