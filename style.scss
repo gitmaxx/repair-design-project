@@ -1958,7 +1958,147 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
 
 
 @media (max-width: 960px) {
+    .section {
+        max-width: 960px;
+    }
+
+    .tile {
+        //display: flex;
+        //flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 180px;
+        max-width: 340px;
+        //position:relative;
+        &--image-mobile {
+            display:block;
+        }
+        &--image{
+            display:none;
+        }
+        &-centered {
+            align-items: center;
+        }
+    }
     
+    .tiles_block {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    
+    }
+
+
+
+
+.tile_content {
+    background-color: $text-color--light;
+    width: 84.18%;
+    position: absolute;
+    top: 223px;
+    &-adjusted {
+      top: 275px;
+    }
+   // &-top {
+    //    top: 0;
+    //    left:-40px;
+    //    width: 376px;
+   // }
+    &--header{
+        font: normal 15px 'Yeseva One';
+        //color: $text-color--darken;
+       // margin: 26px 0 10px 34px;
+       // &-right {
+       //     margin-left: 140px;
+       // }
+        &-centered {
+       //     margin-left: 0;
+       //     margin-bottom: 0;
+       //     text-align: center;
+       font: normal 18px 'Yeseva One';
+        }
+    }
+
+    &--list {
+        padding-inline-start: 0;
+        margin: 0 0 0 30px;
+        padding: 0 0 40px 0px;
+        &-no_marks {
+            list-style:none;
+            padding:25px 30px 55px 20px;
+            margin:0;
+        }
+        &-centered {
+            list-style:none;
+            padding:10px 0px 25px 0px;
+            margin:0;
+            text-align: center;
+            font: normal 18px 'Yeseva One';
+        }
+        &-desktop {
+            display: none;
+        }
+        &-mobile {
+            display: block;
+        }
+    }
+    &--item {
+        font: normal 13px 'FuturaBookC';
+       color: $text-color--dark;
+        line-height: 1.8em;
+        &-large {
+            font: normal 18px 'FuturaBookC'; 
+        }
+      
+        
+    }
+
+    &--footer {
+        font: normal 15px 'Yeseva One';
+        //color: $text-color--light;
+        //text-transform: uppercase;
+        //background-color: $text-color--main;
+       // margin: 0 0 0 0;
+        //text-align: center;
+        padding: 11px 0 11px 0;
+        //position: absolute;
+        //bottom:-26px;
+        //left:0;
+       // width: 100%;
+
+        &-small {
+            font-size: 13px;
+        }
+        //&-narrow {
+        //    width: 69%;
+       // }
+
+    }
+}
+
+.section_repair {
+    margin-bottom: 30px;
+}
+
+.section_repair--tiles .tile:first-child {
+    margin-right: 0;
+}
+
+.section_repair--tiles .tile:nth-child(2) {
+    margin-right: 0;
+}
+ 
+.section_design {
+   padding-bottom: 30px;
+}
+.section_design--tiles .tile:first-child {
+    margin-right: 0;
+}
+
+.section_design--tiles .tile:nth-child(2){
+    margin-right: 0;
+}
+
     .section_clients {
 
         display: none;
@@ -1971,27 +2111,63 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     .section_team {
 
          background: linear-gradient(180deg, $text-color--darkest 100% );
+         margin-bottom: 0px;
 
+    }
+
+
+    .section_team--tiles .tile:last-child {
+
+        margin-bottom: 110px;
+    }
+
+    .section_team--tiles .tile:first-child {
+
+        margin-left: 60px;
+    }
+.section_question {
+    padding-top: 40px;
+}
+.section_team--divider {
+
+    margin-top:0;
+}
+    .section_team--content {
+
+        color: $text-color--light;
+       
     }
 
 }
 
+@media (max-width: 768px) {
+    .section {
+        max-width: 768px;
+    }
+    
+    .section_request,  .navbar, .section_team--content, .section_team--divider {
 
-@media (max-width: 375px) {
-
-    .section_request,  .navbar {
-
-    display: none;
+        display: none;
+    }
+.slider {
+    grid-template-rows: 245px 241px 160px;
+}
 }
 
 
+
+@media (max-width: 640px) {
+
+    
+
+
 .body_wrapper {
-    max-width: 375px;
+    max-width: 640px;
     box-sizing: border-box;
 }
 
 .header {
-    max-width: 375px;
+    max-width: 640px;
     height:57px;
     margin: 0 auto;
     justify-content: space-between;
@@ -2009,7 +2185,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
 }
 
 .section {
-    max-width: 375px;
+    max-width: 640px;
 }
 
 .section_header {
@@ -2021,6 +2197,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 
 }
 
@@ -2141,6 +2318,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     grid-gap: 10px;
     height: auto;
     margin: 0;
+    justify-items: center;
 
     &_play-desktop {
         display: none;
@@ -2273,6 +2451,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
         //@at-rootoverflow: hidden;
         //margin-bottom: 20px;
         position: relative;
+    
 
     }
     
@@ -2652,7 +2831,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
         width: 100%;
         //display: flex;
         flex-direction: column;
-        align-items: flex-end;
+        align-items: center;
         //justify-content: space-between;
     }
     &--icon {
@@ -2675,6 +2854,7 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
 
 .section_team--tiles .tile:first-child {
     margin-right: 0;
+    margin-left:0;
 }
 
 .section_team--tiles .tile:nth-child(2){
@@ -2720,5 +2900,40 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
         display: none;
     }
 }
+
+}
+
+
+@media (max-width: 375px) {
+
+  
+
+
+    .body_wrapper {
+        max-width: 375px;
+        box-sizing: border-box;
+    }
+    
+    .header {
+        max-width: 375px;
+        height:57px;
+        margin: 0 auto;
+        justify-content: space-between;
+        padding: 0 25px 0 25px;
+      
+        &--button {
+            display:none;
+        }
+        &--logo {
+            font: normal 12px 'FuturaDemiC';
+            text-transform: uppercase;
+            color: $text-color--main;
+            margin-left: 0px;
+        }
+    }
+    
+    .section {
+        max-width: 375px;
+    }
 
 }

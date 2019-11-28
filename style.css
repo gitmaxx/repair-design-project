@@ -2219,6 +2219,112 @@
 }
 
 @media (max-width: 960px) {
+  .section {
+    max-width: 960px;
+  }
+  .tile {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin-bottom: 180px;
+    max-width: 340px;
+  }
+  .tile--image-mobile {
+    display: block;
+  }
+  .tile--image {
+    display: none;
+  }
+  .tile-centered {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .tiles_block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .tile_content {
+    background-color: #FFFFFF;
+    width: 84.18%;
+    position: absolute;
+    top: 223px;
+  }
+  .tile_content-adjusted {
+    top: 275px;
+  }
+  .tile_content--header {
+    font: normal 15px 'Yeseva One';
+  }
+  .tile_content--header-centered {
+    font: normal 18px 'Yeseva One';
+  }
+  .tile_content--list {
+    -webkit-padding-start: 0;
+            padding-inline-start: 0;
+    margin: 0 0 0 30px;
+    padding: 0 0 40px 0px;
+  }
+  .tile_content--list-no_marks {
+    list-style: none;
+    padding: 25px 30px 55px 20px;
+    margin: 0;
+  }
+  .tile_content--list-centered {
+    list-style: none;
+    padding: 10px 0px 25px 0px;
+    margin: 0;
+    text-align: center;
+    font: normal 18px 'Yeseva One';
+  }
+  .tile_content--list-desktop {
+    display: none;
+  }
+  .tile_content--list-mobile {
+    display: block;
+  }
+  .tile_content--item {
+    font: normal 13px 'FuturaBookC';
+    color: #959595;
+    line-height: 1.8em;
+  }
+  .tile_content--item-large {
+    font: normal 18px 'FuturaBookC';
+  }
+  .tile_content--footer {
+    font: normal 15px 'Yeseva One';
+    padding: 11px 0 11px 0;
+  }
+  .tile_content--footer-small {
+    font-size: 13px;
+  }
+  .section_repair {
+    margin-bottom: 30px;
+  }
+  .section_repair--tiles .tile:first-child {
+    margin-right: 0;
+  }
+  .section_repair--tiles .tile:nth-child(2) {
+    margin-right: 0;
+  }
+  .section_design {
+    padding-bottom: 30px;
+  }
+  .section_design--tiles .tile:first-child {
+    margin-right: 0;
+  }
+  .section_design--tiles .tile:nth-child(2) {
+    margin-right: 0;
+  }
   .section_clients {
     display: none;
   }
@@ -2228,20 +2334,46 @@
   .section_team {
     background: -webkit-gradient(linear, left top, left bottom, to(#181818));
     background: linear-gradient(180deg, #181818 100%);
+    margin-bottom: 0px;
+  }
+  .section_team--tiles .tile:last-child {
+    margin-bottom: 110px;
+  }
+  .section_team--tiles .tile:first-child {
+    margin-left: 60px;
+  }
+  .section_question {
+    padding-top: 40px;
+  }
+  .section_team--divider {
+    margin-top: 0;
+  }
+  .section_team--content {
+    color: #FFFFFF;
   }
 }
 
-@media (max-width: 375px) {
-  .section_request, .navbar {
+@media (max-width: 768px) {
+  .section {
+    max-width: 768px;
+  }
+  .section_request, .navbar, .section_team--content, .section_team--divider {
     display: none;
   }
+  .slider {
+    -ms-grid-rows: 245px 241px 160px;
+        grid-template-rows: 245px 241px 160px;
+  }
+}
+
+@media (max-width: 640px) {
   .body_wrapper {
-    max-width: 375px;
+    max-width: 640px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
   .header {
-    max-width: 375px;
+    max-width: 640px;
     height: 57px;
     margin: 0 auto;
     -webkit-box-pack: justify;
@@ -2259,7 +2391,7 @@
     margin-left: 0px;
   }
   .section {
-    max-width: 375px;
+    max-width: 640px;
   }
   .section_header {
     font: normal 22px 'Yeseva One';
@@ -2275,6 +2407,9 @@
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .tile {
     -webkit-box-align: start;
@@ -2358,6 +2493,7 @@
     grid-gap: 10px;
     height: auto;
     margin: 0;
+    justify-items: center;
   }
   .slider_play-desktop {
     display: none;
@@ -2867,9 +3003,9 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .section_team--icon {
     margin-bottom: 10px;
@@ -2885,6 +3021,7 @@
   }
   .section_team--tiles .tile:first-child {
     margin-right: 0;
+    margin-left: 0;
   }
   .section_team--tiles .tile:nth-child(2) {
     margin-right: 0;
@@ -2918,6 +3055,35 @@
   }
   .section_address--map {
     display: none;
+  }
+}
+
+@media (max-width: 375px) {
+  .body_wrapper {
+    max-width: 375px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .header {
+    max-width: 375px;
+    height: 57px;
+    margin: 0 auto;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0 25px 0 25px;
+  }
+  .header--button {
+    display: none;
+  }
+  .header--logo {
+    font: normal 12px 'FuturaDemiC';
+    text-transform: uppercase;
+    color: #E3B873;
+    margin-left: 0px;
+  }
+  .section {
+    max-width: 375px;
   }
 }
 /*# sourceMappingURL=style.css.map */
