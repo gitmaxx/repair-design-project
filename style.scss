@@ -66,7 +66,29 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
   text-align: center;
   font: $paragraph_font;
   color: $text-color--darken;
+}
 
+.check {
+  padding-left: 1.7em;
+}
+
+.check_input {
+  position: absolute;
+  margin-left: -1.7em;
+}
+
+.checkbox {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-image: url(assets/icons/check_off.svg);
+  margin-left: -1.7em;
+  margin-top: -1px;
+  z-index: 12;
+}
+
+.check_input:checked + .checkbox {
+  background-image: url(assets/icons/check_on.svg);
 }
 
 .slider {
@@ -499,40 +521,40 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     &-mobile {
       display: none;
     }
-    &--item {
-      font: normal 15px 'FuturaBookC';
-      color: $text-color--dark;
-      line-height: 1.6em;
-      height: 1.6em;
-      &-large {
-        font: normal 18px 'FuturaBookC'; 
-      }   
+  }
+  &--item {
+    font: normal 15px 'FuturaBookC';
+    color: $text-color--dark;
+    line-height: 1.6em;
+    height: 1.6em;
+    &-large {
+      font: normal 18px 'FuturaBookC'; 
+    }   
+  }
+  &--footer {
+    font: normal 18px 'Yeseva One';
+    color: $text-color--light;
+    text-transform: uppercase;
+    background-color: $text-color--main;
+    margin: 0;
+    text-align: center;
+    padding: 17px 0 17px 0;
+    position: absolute;
+    bottom: -26px;
+    left: 0;
+    width: 100%;
+    &-small {
+      font-size: 13px;
     }
-    &--footer {
-      font: normal 18px 'Yeseva One';
-      color: $text-color--light;
-      text-transform: uppercase;
-      background-color: $text-color--main;
-      margin: 0;
-      text-align: center;
-      padding: 17px 0 17px 0;
-      position: absolute;
-      bottom: -26px;
-      left: 0;
-      width: 100%;
-      &-small {
-        font-size: 13px;
-      }
-      &-narrow {
-        width: 69%;
-      }
-      &-medium {
-        width: 78.4%;
-        bottom: -27px;
-        display: flex;
-        align-items: center;
-        padding: 0;
-      }
+    &-narrow {
+      width: 69%;
+    }
+    &-medium {
+      width: 78.4%;
+      bottom: -27px;
+      display: flex;
+      align-items: center;
+      padding: 0;
     }
   }
 }

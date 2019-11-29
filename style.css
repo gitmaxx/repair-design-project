@@ -49,7 +49,7 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  max-width: 0px;
+  max-width: 0;
 }
 
 .scalable {
@@ -103,6 +103,29 @@
   text-align: center;
   font: normal normal normal 20px "FuturaBookC";
   color: #363636;
+}
+
+.check {
+  padding-left: 1.7em;
+}
+
+.check_input {
+  position: absolute;
+  margin-left: -1.7em;
+}
+
+.checkbox {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-image: url(assets/icons/check_off.svg);
+  margin-left: -1.7em;
+  margin-top: -1px;
+  z-index: 12;
+}
+
+.check_input:checked + .checkbox {
+  background-image: url(assets/icons/check_on.svg);
 }
 
 .slider {
@@ -576,7 +599,7 @@
 }
 
 .form--button-centered {
-  margin-left: 0px;
+  margin-left: 0;
 }
 
 .form--checkbox {
@@ -722,7 +745,7 @@
   color: #FFFFFF;
   text-transform: uppercase;
   background-color: #E3B873;
-  margin: 0 0 0 0;
+  margin: 0;
   text-align: center;
   padding: 17px 0 17px 0;
   position: absolute;
@@ -1808,7 +1831,7 @@
         -ms-flex-pack: left;
             justify-content: left;
     margin-left: 0;
-    padding: 0 0 0 0;
+    padding: 0;
     margin-bottom: 0;
   }
   .slider_items_headings_list--item {
@@ -1901,10 +1924,10 @@
             flex-direction: column;
     max-width: 100%;
     background-color: #131313;
-    padding: 0px 0px 0px 0px;
+    padding: 0;
   }
   .form-wide_centered {
-    padding: 0px 0px 0px 0px;
+    padding: 0;
     max-width: 100%;
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -1991,7 +2014,7 @@
     margin-left: 195px;
   }
   .form--button-centered {
-    margin-left: 0px;
+    margin-left: 0;
   }
   .form--checkbox {
     font: normal 16px 'FuturaBookC';
@@ -2334,7 +2357,7 @@
   .section_team {
     background: -webkit-gradient(linear, left top, left bottom, to(#181818));
     background: linear-gradient(180deg, #181818 100%);
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
   .section_team--tiles .tile:last-child {
     margin-bottom: 110px;
@@ -2388,7 +2411,7 @@
     font: normal 12px 'FuturaDemiC';
     text-transform: uppercase;
     color: #E3B873;
-    margin-left: 0px;
+    margin-left: 0;
   }
   .section {
     max-width: 640px;
@@ -2560,7 +2583,7 @@
         -ms-flex-pack: left;
             justify-content: left;
     margin-left: 0;
-    padding: 0 0 0 0;
+    padding: 0;
     margin-bottom: 0;
   }
   .slider_items_headings_list--item {
@@ -2645,10 +2668,10 @@
             flex-direction: column;
     max-width: 100%;
     background-color: #131313;
-    padding: 0px 0px 0px 0px;
+    padding: 0;
   }
   .form-wide_centered {
-    padding: 0px 0px 0px 0px;
+    padding: 0;
     max-width: 100%;
     -webkit-box-align: center;
         -ms-flex-align: center;
