@@ -1,4 +1,4 @@
-@import "fonts.scss";
+@import 'fonts.scss';
 
 $text-color--main: #E3B873;
 $text-color--light: #FFFFFF;
@@ -12,1042 +12,960 @@ $button_font:  normal normal normal 13px 'FuturaDemiC';
 $paragraph_font: normal normal normal 20px 'FuturaBookC';
 
 .body_wrapper {
-    max-width: 1440px;
-    box-sizing: border-box;
-    margin: 0 auto;
+  max-width: 1440px;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
 
 .flex_divider {
-    flex:1;
-    max-width: 0px;
-    
+  flex: 1;
+  max-width: 0;
 }
 
 .scalable {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
+
 .header {
-    max-width: 1440px;
-    height:83px;
-    margin: 0 auto;
-    display: flex;
-    background-color: #131313;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 calc(14.4px + 6% - (1440px - 100%) * 0.2) 0 calc(4.4px + 4.7% - (1440px - 100%) * 0.2);
-    &--button {
-        width: 161px;
-        height: 37px;
-        margin: 0 10px 0 0;
+  max-width: 1440px;
+  height:83px;
+  margin: 0 auto;
+  display: flex;
+  background-color: #131313;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 calc(14.4px + 6% - (1440px - 100%) * 0.2) 0 calc(4.4px + 4.7% - (1440px - 100%) * 0.2);
+  &--button {
+    width: 161px;
+    height: 37px;
+    margin: 0 10px 0 0;
     }
+    
     &--logo {
-        font: normal 14px 'FuturaDemiC';
-        text-transform: uppercase;
-        color: $text-color--main;
-        margin: 0 10px 0 10px;
+      font: normal 14px 'FuturaDemiC';
+      text-transform: uppercase;
+      color: $text-color--main;
+      margin: 0 10px 0 10px;
     }
 }
 
 .section {
-    max-width: 1440px;
-    margin: 0 auto;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .section_header {
-    display: inline-block;
-    font: normal 20px 'Yeseva One';
-    text-transform: uppercase;
-    color: $text-color--darkest;
+  display: inline-block;
+  font: normal 20px 'Yeseva One';
+  text-transform: uppercase;
+  color: $text-color--darkest;
 }
 
 .section_content {
-    text-align: center;
-    font: $paragraph_font;
-    color: $text-color--darken;
+  text-align: center;
+  font: $paragraph_font;
+  color: $text-color--darken;
 
 }
-
 
 .slider {
-    display: grid;
-    grid-template-areas: 
-                        'header items_headings'
-                        'header items'
-                        'descriptions items'
-                        'controls items';
-    grid-template-rows: 60px 220px 210px 40px;
-    grid-template-columns: 35.7% 64.3%;
-    grid-gap: 10px;
-    height: 600px;
-    margin: 0 0 0 calc(14.4px + 6% - (1440px - 100%) * 0.15);
+  display: grid;
+  grid-template-areas:
+  'header items_headings'
+  'header items'
+  'descriptions items'
+  'controls items';
+  grid-template-rows: 60px 220px 210px 40px;
+  grid-template-columns: 35.7% 64.3%;
+  grid-gap: 10px;
+  height: 600px;
+  margin: 0 0 0 calc(14.4px + 6% - (1440px - 100%) * 0.15);
+  position: relative;
+  &_play {
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    line-height: 0.6rem;
+    z-index: 20;
+    &--svg {
+      fill: #E3B873;
+      &:hover {
+        fill: rgb(238, 161, 37);
+        cursor: pointer;
+      }
+    }
+  }
+
+  &_play-mobile {
+    display: none;
+  }
+
+  &_header {
+    grid-area: header;
+    padding-top: 8%;
+    &--header {
+      font: normal 27px 'Yeseva One';
+      text-transform: uppercase;
+      color: $text-color--main;
+      max-width: 253px;
+    }
+    &--text {
+      font: normal 18px 'FuturaBookC';
+      color: $text-color--light;
+      max-width: 440px;
+      line-height: 2em;
+    }
+  }
+
+  &--controls {
+    grid-area: controls;
+    display: flex;
+    align-items: center;
+  }
+  &--control {
+    fill: white;
+    line-height: 0.6rem;
+    &:hover {
+      cursor: pointer;
+      fill: rgb(238, 161, 37);
+    }
+  }
+
+  &_items_headings {
+    grid-area: items_headings;
+    display: flex;
+    &_list {
+      list-style: none;
+      display: flex;
+      text-align: center;
+      justify-content: left;
+      margin-left: 0;
+      padding: 0 0 0 0;
+      margin-bottom: 0;
+      &--item {
+        margin-right: 60px;
+      }
+      &--link {
+        color: $text-color--light;
+        text-transform: uppercase;
+        font: normal 14px 'Yeseva One';
+        &:hover {
+          color: $text-color--main;
+        }
+      }
+    }
+  }
+
+  &_descriptions {
+    grid-area: descriptions;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 440px;
+  }
+
+  &_descriptor {
+    width: 50%;
+    &--head {
+      color: $text-color--main;
+      text-transform: uppercase;
+      font: normal 18px 'Yeseva One';
+    }
+    &--text {
+      color: $text-color--light;
+      font: normal 15px 'FuturaBookC';
+    }
+  }
+
+  &--indicators {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    padding: 2px 14px 0 30px;
+    align-items: center;
+  }
+
+  &--indicator {
+    width: 10px;
+    height: 10px;
+    background-color: $text-color--light;
+    border-radius: 50%;
+    filter: brightness(30%);
+    margin-right: 16px;
+    &-active {
+      filter: brightness(100%);
+    }
+    &:hover {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  &--items {
+    grid-area: items;
+    display: flex;
+    overflow: hidden;
     position: relative;
-
-    &_play {
-       position: absolute;
-       top: 50%;
-       left: 90%;
-       transform: translate(-50%, -50%);
-       line-height: 0.6rem;
-       z-index: 20;
-       &--svg {
-            fill: #E3B873;
-           &:hover {
-               fill:rgb(238, 161, 37);
-               cursor:pointer;
-           }
-       }
-    }
-
-    &_play-mobile {
-        display:none;
-    }
-
-    &_header {
-        
-        grid-area: header;
-        padding-top: 8%;
-        &--header {
-            font: normal 27px 'Yeseva One';
-            text-transform: uppercase;
-            color: $text-color--main;
-            max-width: 253px;
-        }
-        &--text {
-            font: normal 18px 'FuturaBookC';
-            color: $text-color--light;
-            max-width: 440px;
-            line-height: 2em;
-        }
-    }
-
-    &--controls {
-        grid-area: controls;
-        display: flex;
-        align-items: center;
-
-    }
-    &--control {
-        fill:white;
-        line-height: 0.6rem;
-        &:hover {
-            cursor: pointer;
-            fill: rgb(238, 161, 37);
-        }
-    }
-
-    &_items_headings {
-        grid-area: items_headings;
-        display: flex;
-        
-
-        &_list {
-            list-style: none;
-            display: flex;
-            text-align: center;
-            justify-content: left;
-            margin-left: 0;
-            padding:0 0 0 0;
-            margin-bottom: 0;
-            &--item {
-                margin-right: 60px;
-            }
-            &--link {
-                color: $text-color--light;
-                text-transform: uppercase;
-                font: normal 14px 'Yeseva One';
-                &:hover {
-                color: $text-color--main;
-                }
-            }
-        }
-    }
-
-    &_descriptions {
-        grid-area: descriptions;
-        display: flex;
-        flex-wrap: wrap;
-        max-width: 440px;
-    }
-
-    &_descriptor {
-        width:50%;
-        &--head {
-            color: $text-color--main;
-            text-transform: uppercase;
-            font: normal 18px 'Yeseva One';
-        }
-        &--text {
-            color: $text-color--light;
-            font: normal 15px 'FuturaBookC';
-        }
-    }
-
-
-    &--indicators {
-        list-style: none;
-        margin: 0;
-        display: flex;
-        padding: 2px 14px 0 30px;
-        align-items: center;
-    }
-
-    &--indicator {
-        width: 10px;
-        height: 10px;
-        background-color: $text-color--light;
-        border-radius: 50%;
-        filter: brightness(30%);
-        margin-right: 16px;
-        &-active {
-            filter: brightness(100%);  
-        }
-        &:hover {
-        width: 14px;
-        height: 14px;
-        }
-    }
-
-    &--items {
-        grid-area: items;
-        display: flex;
-        //justify-content: space-between;
-        overflow: hidden;
-        position: relative;
-        height: fit-content;
-        
-
-    }
-    &--item {
-        margin-right: 20px;
-   
-    }
-    &--image {
-        width: 100%;
-        height: auto;
-    }
-    
-    &--image-mobile {
-        display: none;
-    }
-
-
-
+    height: fit-content;
+  }
+  &--item {
+    margin-right: 20px;
+  }
+  &--image {
+    width: 100%;
+    height: auto;
+  }
+  &--image-mobile {
+    display: none;
+  }
 }
 
-
 .slider_mod1 {
-    width:100%;
+  width:100%;
+  display: grid;
+  grid-template-areas:
+  'header items_headings'
+  'descriptions items_headings'
+  'descriptions items'
+  'controls items';
+  grid-template-rows: 60px 214px 176px 200px;
+  grid-template-columns: 36.79% 63.21%;
+  height: 650px;
+  margin: 0;
+  &_header {
+    grid-area: header;
+    &--header {
+      font: normal 27px 'Yeseva One';
+      text-transform: uppercase;
+      color: $text-color--main;
+      max-width: 160px;
+      margin: 0;
+      position: relative;
+      &::after {
+        content: ' ';
+        background: url(assets/icons/verylongdash.svg);
+        display: block;
+        height: 4px;
+        width: 100px;
+        background-repeat: no-repeat;
+        background-size: auto;
+        position: absolute;
+        right: -150px;
+        top: 75%;
+      }
+    }
+  }
+  &--controls {
+    grid-area: controls;
+    display: flex;
+  }
+
+  &_items_headings {
+    grid-area: items_headings;
+    padding-top: 48px;
     display: grid;
-    grid-template-areas: 
-                        'header items_headings'
-                        'descriptions items_headings'
-                        'descriptions items'
-                        'controls items';
-    grid-template-rows: 60px 214px 176px 200px;
-    grid-template-columns: 36.79% 63.21%;
-    height: 650px;
-    margin: 0;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 43.2% 43.2% 15.6%;
+  }
 
-    &_header {
-        grid-area: header;
-        //padding-top: 40px;
-        &--header {
-            font: normal 27px 'Yeseva One';
-            text-transform: uppercase;
-            color: $text-color--main;
-            max-width: 160px;
-            margin:0;
-            position: relative;
-            &::after {
-                content: ' ';
-                background: url(assets/icons/verylongdash.svg);
-                display: block;
-                height: 4px;
-                width: 100px;
-                background-repeat: no-repeat;
-                background-size: auto;
-                position: absolute;
-                right: -150px;
-                top: 75%; 
-            }
-        }
+  &_items_heading {
+    width: auto;
+    filter: brightness(30%);
+    &--head {
+      text-transform: uppercase;
+      font: normal 15px 'Yeseva One';
+      color: $text-color--light;
+      margin: 0;
+      display: inline-block;
+      border-bottom: solid 1px $text-color--main;
     }
-
-    &--controls {
-        grid-area: controls;
-        display: flex;
-
+    &--text {
+      color: $text-color--light;
+      font: normal 15px 'FuturaBookC';
     }
-
-    &_items_headings {
-        grid-area: items_headings;
-        padding-top: 48px;
-        display: grid;
-        grid-template-rows: 50% 50%;
-        grid-template-columns: 43.2% 43.2% 15.6%;
+    &-active {
+      filter: brightness(100%);
     }
+  }
 
-    &_items_heading {
-        width:auto;
-        filter: brightness(30%);
-        &--head {
-            text-transform: uppercase;
-            font: normal 15px 'Yeseva One';
-            color: $text-color--light;
-            margin:0;
-            display: inline-block;
-            border-bottom: solid 1px $text-color--main;
-        }
-        &--text {
-            color: $text-color--light;
-            font: normal 15px 'FuturaBookC';
-        }
-        &-active {
-            filter: brightness(100%);
-        }
-    }
-
-   &_descriptions {
+  &_descriptions {
     grid-area: descriptions;
     display: flex;
     flex-direction: column;
     padding-top: 92px;
     &--header {
-        font: normal 15px 'Yeseva One';
-        text-transform: uppercase;
-        color: $text-color--main;
-        padding: 20px 0 0 0;
-        margin: 0;
-        line-height: 1.5em;
+      font: normal 15px 'Yeseva One';
+      text-transform: uppercase;
+      color: $text-color--main;
+      padding: 20px 0 0 0;
+      margin: 0;
+      line-height: 1.5em;
     }
     &--number {
-        font: normal 18px 'Yeseva One';
-        text-transform: uppercase;
-        color: $text-color--light;
-        max-width: 220px;
-        margin: 0;
+      font: normal 18px 'Yeseva One';
+      text-transform: uppercase;
+      color: $text-color--light;
+      max-width: 220px;
+      margin: 0;
     }
     &--content {
-        font: normal 15px 'FuturaBookC';
-        color: $text-color--light;
-        max-width: 340px;
-        padding: 16px 0 0 0;
-        margin: 0;
-        line-height: 1.7em;
+      font: normal 15px 'FuturaBookC';
+      color: $text-color--light;
+      max-width: 340px;
+      padding: 16px 0 0 0;
+      margin: 0;
+      line-height: 1.7em;
     }
-   }
+  }
 
-    &--indicators {
-        list-style: none;
-    }
+  &--indicators {
+    list-style: none;
+  }
 
-
-    &--items {
-        grid-area: items;
-        display: flex;
-        //justify-content: space-between;
-        overflow: hidden;
-        
-    }
-   
-
+  &--items {
+    grid-area: items;
+    display: flex;
+    overflow: hidden;
+  }
 }
 
 .slider_mod1 .slider--item {
-    margin-right:0;
+  margin-right: 0;
 }
 
-
 .form {
-    display: flex;
-    flex-direction: column;
-    max-width: 509px;
-    background-color: $text-color--black;
-    padding: 30px 45px 27px 45px;
-    &-wide_centered {
-        padding: 30px 180px 27px 180px;
-        max-width: 883px;
-        align-items: center;
+  display: flex;
+  flex-direction: column;
+  max-width: 509px;
+  background-color: $text-color--black;
+  padding: 30px 45px 27px 45px;
+  &-wide_centered {
+    padding: 30px 180px 27px 180px;
+    max-width: 883px;
+    align-items: center;
+  }
+  &-lighter {
+    background-color: $text-color--darkest;
+  }
+  &--header {
+    font: normal 20px 'FuturaDemiC';
+    color: $text-color--light;
+    align-self: center;
+    text-align: center;
+    max-width: 235px;
+    margin: 0;
+    &-uppercase {
+      text-transform: uppercase;
     }
-    &-lighter {
-        background-color: $text-color--darkest;
-    }
-    &--header {
-        font: normal 20px 'FuturaDemiC';
-        color: $text-color--light;
-        align-self: center;
-        text-align: center;
-        max-width: 235px;
-        margin: 0;
-        &-uppercase {
-            text-transform: uppercase;
-        }
+  }
 
-    }
-
-    &_fields {
-        display: flex;
-        flex-direction: row;
-        width: 521px;
-        justify-content: space-between;
-    }
-
-    &--field {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        border-bottom: 1px solid gray;
-        padding-top: 46px;
-        &-left_aligned {
-            align-self: flex-start;
-            width: 100%;
-        }
-    }
-    
-    &--label {
-        font: normal 15px 'FuturaBookC';
-        color: $text-color--light;
-        opacity: 0.5;
-    }
-    &--input {
-        font: normal 18px 'FuturaMediumC';
-        color: $text-color--light;
-        border: none;
-        background-color: $text-color--black;
-        &::placeholder {
-            color: $text-color--light;
-        }
-        &-wide {
-            width:232px;
-        }
-    }
-    &--button {
-        width: 213px;
-        height: 51px;
-        font-size: 15px;
-        margin-top: 35px;
-        margin-left: 195px;
-        &-centered {
-            margin-left: 0px;
-        }
-    }
-
-    &--checkbox {
-        font: normal 16px 'FuturaBookC';
-         color: $text-color--light;
-         padding-top:20px;
-    }
-}    
-
-
-
-
-.tiles_block {
+  &_fields {
     display: flex;
     flex-direction: row;
+    width: 521px;
     justify-content: space-between;
+  }
+  &--field {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-bottom: 1px solid gray;
+    padding-top: 46px;
+    &-left_aligned {
+      align-self: flex-start;
+      width: 100%;
+    }
+  }
+  &--label {
+    font: normal 15px 'FuturaBookC';
+    color: $text-color--light;
+    opacity: 0.5;
+  }
+  &--input {
+    font: normal 18px 'FuturaMediumC';
+    color: $text-color--light;
+    border: none;
+    background-color: $text-color--black;
+    &::placeholder {
+      color: $text-color--light;
+    }
+    &-wide {
+      width: 232px;
+    }
+  }
+  &--button {
+    width: 213px;
+    height: 51px;
+    font-size: 15px;
+    margin-top: 35px;
+    margin-left: 195px;
+    &-centered {
+      margin-left: 0;
+    }
+  }
+  &--checkbox {
+    font: normal 16px 'FuturaBookC';
+    color: $text-color--light;
+    padding-top: 20px;
+  }
+}
 
+.tiles_block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .tile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position:relative;
-    &--image-mobile {
-        display:none;
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  &--image-mobile {
+    display: none;
+  }
 }
 
 .tile_icon {
-    content: ' ';
-    display: block;
-    height: 70px;
-    width: 70px;
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-position: center;
-    background-color: $text-color--main;
-    position: absolute;
-    left: -35px;
-    top: -35px; 
-    &-idea {
-        background-image: url(assets/icons/idea.svg); 
-    }
-    &-design {
-        background-image: url(assets/icons/design.svg); 
-    }
-    &-portfolio {
-        background-image: url(assets/icons/portfolio.svg); 
-    }
+  content: ' ';
+  display: block;
+  height: 70px;
+  width: 70px;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  background-color: $text-color--main;
+  position: absolute;
+  left: -35px;
+  top: -35px;
+  &-idea {
+    background-image: url(assets/icons/idea.svg);
+  }
+  &-design {
+    background-image: url(assets/icons/design.svg);
+  }
+  &-portfolio {
+    background-image: url(assets/icons/portfolio.svg);
+  }
 }
 
-
 .tile_content {
-    background-color: $text-color--light;
-    width: 84.18%;
-    position: absolute;
-    top: 70%;
-    &-up {
-        top: 77.37%; 
+  background-color: $text-color--light;
+  width: 84.18%;
+  position: absolute;
+  top: 70%;
+  &-up {
+    top: 77.37%;
+  }
+  &-client {
+    height: 404px;
+    padding: 24px 0 0 0;
+    position: relative;
+    width: 100%;
+    top: 0;
+  }
+  &-shadow {
+    box-shadow: 5px 5px 2px #fafafa, -5px -5px 2px #fafafa;
+  }
+  &--header {
+    font: normal 18px 'Yeseva One';
+    color: $text-color--darken;
+    margin: 26px 0 10px 34px;
+    &-right {
+      margin: 20px 0 20px 120px;
     }
-
-    &-client {
-        height: 404px;
-        padding: 24px 0 0 0;
-        position: relative;
-        width: 100%;
-        top: 0;
+    &-centered {
+      margin-left: 0;
+      margin-bottom: 0;
+      text-align: center;
     }
-    
-    &-shadow {
-
-        box-shadow: 5px 5px 2px #fafafa, -5px -5px 2px #fafafa;
+  }
+  &--list {
+    padding-inline-start: 0;
+    margin: 0 0 0 50px;
+    padding: 0 0 60px 0px;
+    &-no_marks {
+      list-style:none;
+      padding:18px 30px 55px 20px;
+      margin:0;
     }
-
-    &--header{
-        font: normal 18px 'Yeseva One';
-        color: $text-color--darken;
-        margin: 26px 0 10px 34px;
-        &-right {
-            margin: 20px 0 20px 120px;
-        }
-        &-centered {
-            margin-left: 0;
-            margin-bottom: 0;
-            text-align: center;
-        }
+    &-centered {
+      list-style:none;
+      padding:10px 0px 32px 0px;
+      margin:0;
+      text-align: center;
     }
-
-    &--list {
-        padding-inline-start: 0;
-        margin: 0 0 0 50px;
-        padding: 0 0 60px 0px;
-        &-no_marks {
-            list-style:none;
-            padding:18px 30px 55px 20px;
-            margin:0;
-        }
-        &-centered {
-            list-style:none;
-            padding:10px 0px 32px 0px;
-            margin:0;
-            text-align: center;
-        }
-        &-mobile {
-            display: none;
-        }
+    &-mobile {
+      display: none;
     }
     &--item {
-        font: normal 15px 'FuturaBookC';
-        color: $text-color--dark;
-        line-height: 1.6em;
-        height: 1.6em;
-        &-large {
-            font: normal 18px 'FuturaBookC'; 
-        }
-      
-        
+      font: normal 15px 'FuturaBookC';
+      color: $text-color--dark;
+      line-height: 1.6em;
+      height: 1.6em;
+      &-large {
+        font: normal 18px 'FuturaBookC'; 
+      }   
     }
-
     &--footer {
-        font: normal 18px 'Yeseva One';
-        color: $text-color--light;
-        text-transform: uppercase;
-        background-color: $text-color--main;
-        margin: 0 0 0 0;
-        text-align: center;
-        padding: 17px 0 17px 0;
-        position: absolute;
-        bottom:-26px;
-        left:0;
-        width: 100%;
-
-        &-small {
-            font-size: 13px;
-        }
-        &-narrow {
-            width: 69%;
-        }
-        &-medium {
-            width: 78.4%;
-            bottom: -27px;
-            display: flex;
-            align-items: center;
-            padding: 0;
-        }
-
+      font: normal 18px 'Yeseva One';
+      color: $text-color--light;
+      text-transform: uppercase;
+      background-color: $text-color--main;
+      margin: 0;
+      text-align: center;
+      padding: 17px 0 17px 0;
+      position: absolute;
+      bottom: -26px;
+      left: 0;
+      width: 100%;
+      &-small {
+        font-size: 13px;
+      }
+      &-narrow {
+        width: 69%;
+      }
+      &-medium {
+        width: 78.4%;
+        bottom: -27px;
+        display: flex;
+        align-items: center;
+        padding: 0;
+      }
     }
+  }
 }
 
 .area {
-    margin-left: 64px;
-    position: relative;
-    &::before {
-        content: ' ';
-        background: url(assets/icons/area.svg);
-        display: block;
-        height: 33px;
-        width: 33px;
-        line-height: 0.6rem;
-        background-repeat: no-repeat;
-        background-size: auto;
-        position: absolute;
-        left: -48px;
-        top: -25%; 
-    }
+  margin-left: 64px;
+  position: relative;
+  &::before {
+    content: ' ';
+    background: url(assets/icons/area.svg);
+    display: block;
+    height: 33px;
+    width: 33px;
+    line-height: 0.6rem;
+    background-repeat: no-repeat;
+    background-size: auto;
+    position: absolute;
+    left: -48px;
+    top: -25%; 
+  }
 }
 
 .time {
-    margin-left: 63px;
-    position: relative;
-    &::before {
-        content: ' ';
-        background: url(assets/icons/calendar.svg);
-        display: block;
-        height: 33px;
-        width: 33px;
-        line-height: 0.6rem;
-        background-repeat: no-repeat;
-        background-size: auto;
-        position: absolute;
-        left: -48px;
-        top: -25%; 
-    }
+  margin-left: 63px;
+  position: relative;
+  &::before {
+    content: ' ';
+    background: url(assets/icons/calendar.svg);
+    display: block;
+    height: 33px;
+    width: 33px;
+    line-height: 0.6rem;
+    background-repeat: no-repeat;
+    background-size: auto;
+    position: absolute;
+    left: -48px;
+    top: -25%;
+  }
 }
 
 .divider {
-        content: ' ';
-        background: url(assets/icons/div.svg);
-        display: block;
-        height: 54px;
-        width: 3px;
-        margin-left: 13px;
-        line-height: 0.6rem;
-        background-repeat: no-repeat;
-        background-size: auto;
-       // position: absolute;
-       // left: -48px;
-       // top: -25%; 
+  content: ' ';
+  background: url(assets/icons/div.svg);
+  display: block;
+  height: 54px;
+  width: 3px;
+  margin-left: 13px;
+  line-height: 0.6rem;
+  background-repeat: no-repeat;
+  background-size: auto;
 }
 
 
-.first_section {
-    display: flex;
-    background-color: #131313;
-    //height: 755px;
+.main_section {
+  display: flex;
+  background-color: #131313;
 }
 
 .navbar_list {
-    //@includewidth:60%;
-    display: flex;
-    text-align: center;
-    list-style: none;
-    justify-content: space-between;
-    padding:0;
-    &--item {
-        margin-left: 47px;
-        &:first-child {
-            margin-left: 0;
-        }
+  display: flex;
+  text-align: center;
+  list-style: none;
+  justify-content: space-between;
+  padding: 0;
+  &--item {
+    margin-left: 47px;
+    &:first-child {
+      margin-left: 0;
     }
+  }
 }
 
 .navbar_list--link {
   color: $text-color--light;
   text-transform: uppercase;
   font: normal 14px 'FuturaBookC';
-
   &:hover {
     color: $text-color--main;
-
   }
-
 }
 
 .button {
-    background-color: $text-color--main;
-    color: $text-color--light;
-    font: $button_font;
-    text-transform: uppercase;
+  background-color: $text-color--main;
+  color: $text-color--light;
+  font: $button_font;
+  text-transform: uppercase;
 }
 
-
-//.button--main_image-transparent {
-//    background-color: none;
-//}
-
 .phone_number{
-    margin: 0 10px 0 10px;
-    min-width: fit-content;
-    &--link {
+  margin: 0 10px 0 10px;
+  min-width: fit-content;
+  &--link {
     font: normal 14px 'FuturaDemiC';
     color: $text-color--main;
     text-decoration: underline;
-}
+  }
 }
 
 .main_image {
-    background: url(assets/images/section1.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 95%;
-    
-    max-height: 707px;
-    height: calc(100vw*0.52138643067);
- 
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 0px 0px 0px 58px;
-    margin-bottom: 50px;
-    position: relative;
-    
+  background: url(assets/images/section1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 95%;
+  max-height: 707px;
+  height: calc(100vw*0.52138643067);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0px 0px 0px 58px;
+  margin-bottom: 50px;
+  position: relative;
 }
 
 .sidebar {
-    width: 82px;
-    display: flex;
-    justify-content: center;
-
-    &--text {
-        transform: rotate(90deg);
-        text-align: center;
-        margin: auto;
-        font: normal 14px 'FuturaDemiC';
-        text-transform: uppercase;
-        color: $text-color--main;
-        text-decoration: none;
-        position: relative;
-        &:hover {
-            text-decoration: underline $text-color--main;
-        } 
-        &::after {
-            content: ' ';
-            background: url(assets/icons/longdash.svg);
-            display: block;
-            height: 51px;
-            width: 4px;
-            background-repeat: no-repeat;
-            background-size: auto;
-            position: absolute;
-            right: -40px;
-            top: -100%;
-            -webkit-transform: rotate(90deg);
-        }
+  width: 82px;
+  display: flex;
+  justify-content: center;
+  &--text {
+    transform: rotate(90deg);
+    text-align: center;
+    margin: auto;
+    font: normal 14px 'FuturaDemiC';
+    text-transform: uppercase;
+    color: $text-color--main;
+    text-decoration: none;
+    position: relative;
+    &:hover {
+      text-decoration: underline $text-color--main;
+    } 
+    &::after {
+      content: ' ';
+      background: url(assets/icons/longdash.svg);
+      display: block;
+      height: 51px;
+      width: 4px;
+      background-repeat: no-repeat;
+      background-size: auto;
+      position: absolute;
+      right: -40px;
+      top: -100%;
+      -webkit-transform: rotate(90deg);
     }
+  }
 }
 .main_content {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    max-width:515px;
-    &--button {
-        flex: 0 0 auto;
-        width: 207px;
-        height: 51px;
-        margin-right: 10px;
-        &-transparent {
-            background-color: transparent;
-            border: 1px solid $text-color--light;
-        }
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  max-width: 515px;
+  &--button {
+    flex: 0 0 auto;
+    width: 207px;
+    height: 51px;
+    margin-right: 10px;
+    &-transparent {
+      background-color: transparent;
+      border: 1px solid $text-color--light;
     }
-    &--header {
-        font: normal 40px 'Yeseva One';
-        color: $text-color--light;
-        margin: 0.2em 0 0.2em 0;
-        line-height: 1.38em;
+  }
+  &--header {
+    font: normal 40px 'Yeseva One';
+    color: $text-color--light;
+    margin: 0.2em 0 0.2em 0;
+    line-height: 1.38em;
+  }
+  &--text {
+    font: normal 22px 'FuturaBookC';
+    color: $text-color--light;
+    margin: 1.5em 0 1.5em 0;
+    line-height: 1.5em;
+    &-mobile {
+      display: none;
     }
-    &--text {
-        font: normal 22px 'FuturaBookC';
-        color: $text-color--light;
-        margin: 1.5em 0 1.5em 0;
-        line-height: 1.5em;
-        &-mobile {
-            display: none;
-        }
-    }
+  }
 }
 
 .scroll {
-    position: absolute;
-    bottom: -50px;
-    left:-78px;
-    z-index: 10;
-    background-color: #131313;
-    width:250px;
-    height:100px;
-    display: flex;
-    &--text {
-        font: normal 14px 'Yeseva One';
-        color: $text-color--light;
-        text-transform: uppercase;
-        text-align: center;
-        margin-top:0;
-        margin-bottom: 0;
-        position: absolute;              
-        top: 50%;
-        left: 50%;
-        margin-right: -50%;
-        transform: translate(-50%, -50%);
-    }
+  position: absolute;
+  bottom: -50px;
+  left: -78px;
+  z-index: 10;
+  background-color: #131313;
+  width: 250px;
+  height: 100px;
+  display: flex;
+  &--text {
+    font: normal 14px 'Yeseva One';
+    color: $text-color--light;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: absolute;              
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+  &_icon {
+    position: absolute;  
+    top: 50%;
+    left: 85%;
+    margin-right: -10%;
+    transform: translate(-50%, -50%);
+    line-height: 0.6rem;
+  }
+}
 
-        &_icon {
-            position: absolute;  
-            top: 50%;
-            left: 85%;
-            margin-right: -10%;
-            transform: translate(-50%, -50%);
-            line-height: 0.6rem;
-        }
-    }
-    .scroll_icon--svg {
-        
-         stroke: $text-color--main;
-         &:hover {
-            stroke: rgb(238, 161, 37);
-            cursor: pointer;
-          }
-       
-    } 
+.scroll_icon--svg {      
+  stroke: $text-color--main;
+  &:hover {
+    stroke: rgb(238, 161, 37);
+    cursor: pointer;
+  }
+} 
 
 .section_projects {
-   
-    background-color: #131313;
-    //&_slider_controls {
-   //     margin-top: 20px;
-   // }
-
-
+  background-color: #131313;
 }
 
 .slider_header_projects {
-    position: relative;
-    &::after {
-        content: ' ';
-        background: url(assets/icons/verylongdash.svg);
-        width: 92px;
-        height: 1px;
-        background-size: auto;
-        display: block;
-        position: absolute;
-        right: -15px;
-        top: 80%;
-    }
+  position: relative;
+  &::after {
+    content: ' ';
+    background: url(assets/icons/verylongdash.svg);
+    width: 92px;
+    height: 1px;
+    background-size: auto;
+    display: block;
+    position: absolute;
+    right: -15px;
+    top: 80%;
+  }
 }
 
 .section_control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+  background: linear-gradient(180deg,#131313 0%, #131313 35%, white 35%, #FFFFFF 100%);
+  &--header {
+    color: $text-color--light;
+  }
+  &--icon {
+    margin-bottom: 30px;
+  }
+  &--video {
+    margin-bottom: 62px;
+    &-mobile {
+      display: none;
+    }
+  }
+  &--divider {
+    margin-bottom: 15px;
+  }
+  &--content {
+    max-width: 673px;
+    margin-bottom: 80px;
+    line-height: 2em;
+    &-mobile {
+      display: none;
+    }
+  }
+  &_form {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 100px;
-    background: linear-gradient(180deg,#131313 0%, #131313 35%, white 35%, #FFFFFF 100%);
-    &--header {
-        color: $text-color--light;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 800px;
+    &--field {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      border-bottom: 1px solid gray;
+      padding-right: 35px;
     }
-    &--icon {
-        margin-bottom:30px;
+    &--label {
+      font: normal 15px 'FuturaBookC';
+      color: $text-color--darken;
+      opacity: 50%;
     }
-    &--video {
-        margin-bottom:62px;
-        &-mobile {
-            display:none;
-        }
+    &--input {
+      font: normal 18px 'FuturaBookC';
+      color: $text-color--darken;
+      border: none;
     }
-    &--divider {
-        margin-bottom:15px;
+    &--button {
+      width: 200px;
+      height: 50px;
+      font-size: 15px;
+      padding-bottom: 1px;
     }
-
-
-    &--content {
-        max-width: 673px;
-        margin-bottom: 80px;
-        line-height: 2em;
-      &-mobile {
-        display:none;
-      }
+    &--checkbox {
+      font: normal 16px 'FuturaBookC';
+      color: $text-color--darkest;
+      padding-top: 20px;
     }
-    &_form {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        max-width: 800px;
-        &--field {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            border-bottom: 1px solid gray;
-            padding-right: 35px;
-        }
-        
-        &--label {
-            font: normal 15px 'FuturaBookC';
-             color: $text-color--darken;
-             opacity: 50%;
-        }
-        &--input {
-            font: normal 18px 'FuturaBookC';
-             color: $text-color--darken;
-             border: none;
-        }
-        &--button {
-            width: 200px;
-            height: 50px;
-            font-size: 15px;
-            padding-bottom: 1px;
-        }
-
-        &--checkbox {
-            font: normal 16px 'FuturaBookC';
-             color: $text-color--darkest;
-             padding-top:20px;
-        }
-    }    
+  }    
 }
 
-
 .section_repair {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 270px;
-    padding: 0 calc(14.4px + 6% - (1440px - 100%) * 0.3) 0 calc(14.4px + 6% - (1440px - 100%) * 0.3);
-    &--tiles {
-        width: 100%;
-        
-    }
-    &--icon {
-        margin-bottom:30px;
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 270px;
+  padding: 0 calc(14.4px + 6% - (1440px - 100%) * 0.3) 0 calc(14.4px + 6% - (1440px - 100%) * 0.3);
+  &--tiles {
+    width: 100%;
+  }
+  &--icon {
+    margin-bottom:30px;
+  }
 }
 
 .section_repair--tiles .tile:first-child {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .section_repair--tiles .tile:nth-child(2){
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 
 .section_request {
-    display: flex;
-    padding-bottom: 240px;
-    &--image {
-        background-image: url(assets/images/building.png);
-        background-repeat: no-repeat;
-        width: 57.77%;
-        max-height: 707px;
-        height: calc(100vw*0.52138643067);
-        position: relative;
-        overflow: hidden;
-    }
+  display: flex;
+  padding-bottom: 240px;
+  &--image {
+    background-image: url(assets/images/building.png);
+    background-repeat: no-repeat;
+    width: 57.77%;
+    max-height: 707px;
+    height: calc(100vw*0.52138643067);
+    position: relative;
+    overflow: hidden;
+  }
 }
 
 .circle {  
-    width: 630px;
-    height: 630px;
-    border-radius: 50%;
-    //background-image: 
-       //linear-gradient(#fff,#fff) padding-box,
-       //linear-gradient(to right, transparent 0%, transparent 20%, transparent 20%, #E3B873 100%);
-       //-webkit-mask-image: 
-    border: 3px solid #E3B873 ;
-    position: absolute;
-    top: 55px;
-    left: -150px;
-    overflow: hidden;
+  width: 630px;
+  height: 630px;
+  border-radius: 50%;
+  border: 3px solid #E3B873 ;
+  position: absolute;
+  top: 55px;
+  left: -150px;
+  overflow: hidden;
 }
 .circle_item {
-    
-    box-sizing: content-box;
-    position: absolute;
-    background-color: #E3B873;
-    border-radius: 50%;
-    width: 42px;
-    height: 42px;
-    color: $text-color--light;
-    font: normal 18px 'Yeseva One';
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    &-first {
-        left: 356px;
-        top: 116px;
-        &::after {
-            content: 'Our specialist will arrive for measurements per day contact, or appoint a date convenient for you';
-            color: $text-color--darken;
-            font: normal 18px 'FuturaMediumC';
-            left: 55px;
-            width:360px;
-            display: block;
-            position: absolute;
-
-        }
+  box-sizing: content-box;
+  position: absolute;
+  background-color: #E3B873;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  color: $text-color--light;
+  font: normal 18px 'Yeseva One';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &-first {
+    left: 356px;
+    top: 116px;
+    &::after {
+      content: 'Our specialist will arrive for measurements per day contact, or appoint a date convenient for you';
+      color: $text-color--darken;
+      font: normal 18px 'FuturaMediumC';
+      left: 55px;
+      width: 360px;
+      display: block;
+      position: absolute;
     }
-    &-second {
-        left: 431px;
-        top: 227px;
-        &::after {
-            content: 'Free metering';
-            color: $text-color--darken;
-            font: normal 18px 'FuturaMediumC';
-            left: 55px;
-            width:160px;
-            display: block;
-            position: absolute;
-        }
+  }
+  &-second {
+    left: 431px;
+    top: 227px;
+    &::after {
+      content: 'Free metering';
+      color: $text-color--darken;
+      font: normal 18px 'FuturaMediumC';
+      left: 55px;
+      width: 160px;
+      display: block;
+      position: absolute;
     }
-    &-third {
-        left: 456px;
-        top: 388px;
-        &::after {
-            content: 'Free consultation';
-            color: $text-color--darken;
-            font: normal 18px 'FuturaMediumC';
-            left: 55px;
-            width:160px;
-            display: block;
-            position: absolute;
-        }
-    
+  }
+  &-third {
+    left: 456px;
+    top: 388px;
+    &::after {
+      content: 'Free consultation';
+      color: $text-color--darken;
+      font: normal 18px 'FuturaMediumC';
+      left: 55px;
+      width: 160px;
+      display: block;
+      position: absolute;
     }
-    &-fourth {
-        left: 390px;
-        top: 548px;
-        &::after {
-            content: 'Get a cost estimate and the timing of your future repairs';
-            color: $text-color--darken;
-            font: normal 18px 'FuturaMediumC';
-            left: 55px;
-            width:260px;
-            display: block;
-            position: absolute;
-        }
+  }
+  &-fourth {
+    left: 390px;
+    top: 548px;
+    &::after {
+      content: 'Get a cost estimate and the timing of your future repairs';
+      color: $text-color--darken;
+      font: normal 18px 'FuturaMediumC';
+      left: 55px;
+      width: 260px;
+      display: block;
+      position: absolute;
     }
-
+  }
 }
+
 .form_wrapper {
-    padding-top: 105px;
-    display: flex;
-    flex-direction: column;
+  padding-top: 105px;
+  display: flex;
+  flex-direction: column;
 }
 
 .savings_icon {
-    background: url(assets/icons/piggy.png);
-    width: 74px;
-    height: 74px;
-    height: 102;
-    margin: 30px 25px 0 32px;
-    display: block;
-    position: relative;
-    background-repeat: no-repeat;
-    background-size: auto;
-        &::after {
-            content: 'Help save 10 - 20% of the cost of materials';
+  background: url(assets/icons/piggy.png);
+  width: 74px;
+  height: 74px;
+  height: 102;
+  margin: 30px 25px 0 32px;
+  display: block;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: auto;
+  &::after {
+    content: 'Help save 10 - 20% of the cost of materials';
     color: #E3B873;
     font: normal 20px 'FuturaDemiC';
     width: 220px;
@@ -1056,679 +974,567 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
-        }
+  }
 }
 
 .section_fantasies {
-    margin-bottom: 135px;
-    background: url(assets/images/room_backgr.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 0 0 0 calc(14.4px + 6% - (1440px - 100%) * 0.1);
-    &--header {
-        font-size: 27px;
-        color:$text-color--main;
-        line-height: 1.386em;
-        margin:0 0 6% 0;
-        
-       
-    }
-
-
-
-    &-mobile {
-        display: none;
-    }
-
+  margin-bottom: 135px;
+  background: url(assets/images/room_backgr.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0 0 0 calc(14.4px + 6% - (1440px - 100%) * 0.1);
+  &--header {
+    font-size: 27px;
+    color: $text-color--main;
+    line-height: 1.386em;
+    margin: 0 0 6% 0;  
+  }
+  &-mobile {
+    display: none;
+  }
 }
 
 .fantasies_wrapper {
-
-    
-    width: 100%;
-    //background-color: #131313;
-    max-height: 865px;
-    height: calc(100vw*0.6015299);
-    display:flex;
-    position: relative;
+  width: 100%;
+  max-height: 865px;
+  height: calc(100vw*0.6015299);
+  display: flex;
+  position: relative;
 }
 
 .fantasies_content {
-    margin: calc(4% - (865px - 100%) * 0.17) 0 0 0;
-    width:40%;
+  margin: calc(4% - (865px - 100%) * 0.17) 0 0 0;
+   width: 40%;
 }
 
 .fant_list {
-    //width:40%;
-    //display: flex;
-    //text-align: center;
-    list-style: none;
-    padding: 0 0 0 0;
-    //line-height: 3;
-    margin:5px 0 0 0;
-    &--item {
-        margin: 0 0 1.7% 0;
+  list-style: none;
+  padding: 0 0 0 0;
+  margin: 5px 0 0 0;
+  &--item {
+    margin: 0 0 1.7% 0;
+  }
+  &--link {
+    font: normal normal 20px 'Proxima Nova';
+    color: $text-color--light;
+    line-height: 2em;
+    &-active {
+      color: $text-color--main;
+      text-decoration: underline;
     }
-    //justify-content: space-between;
-  
-    &--link {
-        font: normal normal 20px 'Proxima Nova';
-        color:$text-color--light;
-        line-height: 2em;
-        &-active {
-            color:$text-color--main;
-            text-decoration: underline;
-        }
-       
-    }
+  }
 }
-
 
 .fantasies_images_left {
-    //display: flex;
-    //flex-direction: column;
-    position: absolute;
-    top: -41px;
-    //left: calc(38% - (1440px - 100%) * 0.2);
-    left:36%;
-    width: 26.4337%;
-    height: auto;
+  position: absolute;
+  top: -41px;
+  left: 36%;
+  width: 26.4337%;
+  height: auto;
 }
 
-
-
 .fantasies_images_right {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: -113px;
-    left: 66%;
-    width: 26.4337%;
-    height: auto;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: -113px;
+  left: 66%;
+  width: 26.4337%;
+  height: auto;
 }
 
 .fantasies_image_left_top {
-    margin-bottom: 39px;
-    width: 100%;
-    height: auto;
-
+  margin-bottom: 39px;
+  width: 100%;
+  height: auto;
 }
 
 .fantasies_image_left_bottom {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .fantasies_image_right_top {
-    margin-bottom: 37px;
-    width: 100%;
-    height: auto;
+  margin-bottom: 37px;
+  width: 100%;
+  height: auto;
 }
 
 .fantasies_image_right_bottom {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .section_design {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: linear-gradient(180deg, white 50%, #131313 50%);
-    //padding-bottom: 270px;
-    padding: 0 calc(14.4px + 6% - (1440px - 100%) * 0.3) 270px calc(14.4px + 6% - (1440px - 100%) * 0.3);
-    &--tiles {
-        width: 100%;
-       
-    }
-    &--content {
-        max-width: 665px;
-        margin-bottom: 50px;
-        line-height: 1.38em;
-    }
-    &--icon {
-        margin-bottom:15px;
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(180deg, white 50%, #131313 50%);
+  padding: 0 calc(14.4px + 6% - (1440px - 100%) * 0.3) 270px calc(14.4px + 6% - (1440px - 100%) * 0.3);
+  &--tiles {
+    width: 100%;
+  }
+  &--content {
+    max-width: 665px;
+    margin-bottom: 50px;
+    line-height: 1.38em;
+  }
+  &--icon {
+    margin-bottom: 15px;
+  }
 }
 
-
 .section_design--tiles .tile:first-child {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .section_design--tiles .tile:nth-child(2){
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .section_process {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0 calc(14.4px + 6% - (1440px - 100%) * 0.15) 0 calc(14.4px + 6% - (1440px - 100%) * 0.15);
-    //padding: 0 7% 0 7%;
-    background-color: #131313;
-   // margin-bottom: 400px;
-   &--header {
-       font: normal 15px 'FuturaDemiC';
-       text-transform: uppercase;
-       color:$text-color--light;
-       margin-bottom: 22px;
-       
-   }
-   &_slider_controls {
-       margin-top: 100px;
-   }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 calc(14.4px + 6% - (1440px - 100%) * 0.15) 0 calc(14.4px + 6% - (1440px - 100%) * 0.15);
+  background-color: #131313;
+  &--header {
+    font: normal 15px 'FuturaDemiC';
+    text-transform: uppercase;
+    color: $text-color--light;
+    margin-bottom: 22px; 
+  }
+  &_slider_controls {
+    margin-top: 100px;
+  }
 }
-
 
 .section_team {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: linear-gradient(180deg,#131313 50%, white 50%);
-    padding: 95px calc(44px + 10% - (1440px - 100%) * 0.25) 0 calc(44px + 10% - (1440px - 100%) * 0.25);
-    margin-bottom: 50px;
-    &--header {
-        max-width: 109px;
-        color: $text-color--light;
-    }
-    &--header_content {
-        max-width: 430px;
-        color: $text-color--light;
-        margin-bottom: 80px;
-        line-height: 1.38em;
-    }
-    
-    &--content {
-        max-width: 560px;
-        color: $text-color--darken;
-        line-height: 1.7em;
-        margin-top: 10px;
-        }
-        
-    
-    &--tiles {
-        width: 100%;
-        //display: flex;
-        //flex-direction: row;
-        //justify-content: space-between;
-    }
-    &--icon {
-        margin-bottom:10px;
-    }
-    &--divider {
-        margin-top: 120px;
-       
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(180deg, #131313 50%, white 50%);
+  padding: 95px calc(44px + 10% - (1440px - 100%) * 0.25) 0 calc(44px + 10% - (1440px - 100%) * 0.25);
+  margin-bottom: 50px;
+  &--header {
+    max-width: 109px;
+    color: $text-color--light;
+  }
+  &--header_content {
+    max-width: 430px;
+    color: $text-color--light;
+    margin-bottom: 80px;
+    line-height: 1.38em;
+  }
+  &--content {
+    max-width: 560px;
+    color: $text-color--darken;
+    line-height: 1.7em;
+    margin-top: 10px;
+  }
+  &--tiles {
+    width: 100%;
+  }
+  &--icon {
+    margin-bottom: 10px;
+  }
+  &--divider {
+    margin-top: 120px;
+  }
 }
 
-
 .section_team--tiles .tile:first-child {
-    margin-right: 40px;
+  margin-right: 40px;
 }
 
 .section_team--tiles .tile:nth-child(2){
-    margin-right: 40px;
+  margin-right: 40px;
 }
 
 .section_team--tiles .tile_content {
-    width: 85.66%;
+  width: 85.66%;
 }
 
-
 .section_clients {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom:158px;
-    padding: 0 calc(14px + 6.1% - (1440px - 100%) * 0.15) 0 calc(14px + 6.1% - (1440px - 100%) * 0.15);
-
-    &--header {
-        max-width: 150px;
-    }
-    &--content {
-        max-width: 380px;
-        line-height: 1.38em;
-        margin-bottom: 42px;
-       // &-padded {
-       //     padding-top: 150px;
-       // }
-        
-    }
-    &--tiles {
-        width: 100%;
-        margin: 0 10px 0 10px;
-        //display: flex;
-        //flex-direction: row;
-        //justify-content: space-between;
-        //align-self: flex-start;
-    }
-
-   &--photo {
-       z-index: 10;
-       position: absolute;
-       top: 24px;
-       left: 20px;
-   }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 158px;
+  padding: 0 calc(14px + 6.1% - (1440px - 100%) * 0.15) 0 calc(14px + 6.1% - (1440px - 100%) * 0.15);
+  &--header {
+    max-width: 150px;
+  }
+  &--content {
+    max-width: 380px;
+    line-height: 1.38em;
+    margin-bottom: 42px;
+  }
+  &--tiles {
+    width: 100%;
+    margin: 0 10px 0 10px;
+  }
+  &--photo {
+    z-index: 10;
+    position: absolute;
+    top: 24px;
+    left: 20px;
+  }
 }
 
 .section_clients .tile {
-    width: 30.42%;
+  width: 30.42%;
 }
 
 .section_question {
-    display: flex;
-    justify-content: center;
-    background: linear-gradient(180deg, white 50%, $text-color--darkest 50%);
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(180deg, white 50%, $text-color--darkest 50%);
 }
 
 .section_address {
-    display: flex;
-    flex-direction: column;
-    background-color: $text-color--darkest;
-    align-items: center;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    &--content {
-        font: normal 20px 'Yeseva One';
-        color: $text-color--main;
-        text-transform: uppercase;
-        max-width: 580px;
-        text-align: center;
-        line-height: 1.5em;
+  display: flex;
+  flex-direction: column;
+  background-color: $text-color--darkest;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  &--content {
+    font: normal 20px 'Yeseva One';
+    color: $text-color--main;
+    text-transform: uppercase;
+    max-width: 580px;
+    text-align: center;
+    line-height: 1.5em;
+  }
+  &_icons{
+    margin: 30px 0 43px 0;
+    &-mobile {
+      display: none;
     }
-    &_icons{
-        margin: 30px 0 43px 0;
-        &-mobile {
-            display: none;
-        }
+  }
+  &--icon {
+    padding: 0 7px 0 7px;
+    fill: $text-color--main;
+    &:hover {
+      fill: rgb(238, 161, 37);
+      cursor: pointer;
     }
-    &--icon {
-        padding: 0 7px 0 7px;
-        fill:$text-color--main;
-        &:hover {
-            fill: rgb(238, 161, 37);
-            cursor: pointer;
-        }
-        &:active {
-            fill: rgb(238, 161, 37);
-            
-        }
+    &:active {
+      fill: rgb(238, 161, 37);  
     }
-    &--map-mobile {
-        display: none;
-    }
-    &--tel {
-        text-decoration: none;
-    }
+  }
+  &--map-mobile {
+    display: none;
+  }
+  &--tel {
+    text-decoration: none;
+  }
 }
-
 
 .footer {
-    max-width: 1440px;
-    height:140px;
-    margin: 0 auto;
-    display: flex;
-    background-color: #131313;
-    justify-content: space-around;
-    align-items: center;
-    &--button {
-        width: 161px;
-        height: 37px;
-        margin: 0 10px 0 0;
-    }
-    &--logo {
-        font: normal 14px 'FuturaDemiC';
-        text-transform: uppercase;
-        color: $text-color--main;
-        margin: 0 10px 0 10px;
-    }
+  max-width: 1440px;
+  height: 140px;
+  margin: 0 auto;
+  display: flex;
+  background-color: #131313;
+  justify-content: space-around;
+  align-items: center;
+  &--button {
+    width: 161px;
+    height: 37px;
+    margin: 0 10px 0 0;
+  }
+  &--logo {
+    font: normal 14px 'FuturaDemiC';
+    text-transform: uppercase;
+    color: $text-color--main;
+    margin: 0 10px 0 10px;
+  }
 }
-
 
 @media (max-width: 1366px) {
-.tile_content--footer-medium {
+
+  .tile_content--footer-medium {
     width: 100%;
-}
+  }
 
-.circle_item-first::after {
+  .circle_item-first::after {
     width: 300px;
-}
-.circle_item-fourth::after {
+  }
+
+  .circle_item-fourth::after {
     width: 220px;
-}
-
-
+  }
 }
 
 @media (max-width: 1200px) {
-    .section_fantasies--header {
-        font-size: 24px;
-        line-height: 1.15;
-        margin: 0;
-    }
+  .section_fantasies--header {
+    font-size: 24px;
+    line-height: 1.15;
+    margin: 0;
+  }
 
-    .section_request {
-        justify-content: center;
+  .section_request {
+    justify-content: center;
     padding-bottom: 170px;
     &--image {
-        display: none;
+      display: none;
     }
-}
+  }
 
-.savings_icon {
+  .savings_icon {
     display: none;
-}
+  }
 
-.section_request  .form_wrapper {
-   padding-top: 0;
-}
-.fant_list--item {
+  .section_request  .form_wrapper {
+    padding-top: 0;
+  }
+  .fant_list--item {
     margin: 0 0 5px 0;
-}
+  }
 
-.fant_list--link {
+  .fant_list--link {
     font-size: 18px;
-}
+  }
 
-.section_design--tiles .tile:nth-child(3) .tile_content--list-desktop {
+  .section_design--tiles .tile:nth-child(3) .tile_content--list-desktop {
     display: none;
-}
+  }
 
-.section_design--tiles .tile:nth-child(3) .tile_content--list-mobile {
+  .section_design--tiles .tile:nth-child(3) .tile_content--list-mobile {
     display: block;
+  }
 }
-}
-
-
 
 @media (max-width: 1024px) {
-    .sidebar, .scroll, .footer, .section_fantasies, .section_process, .savings_icon, .header--button {
-        display: none
-    }
-
-
-    .section {
-        max-width: 1024px;
-    }
-
-
-    .section_content {
-        text-align: center;
-        font: normal 18px 'FuturaBookC';
-        color: $text-color--light;
-    
-    }
-
-
-    .slider_header_projects::after {
-        display: none;
-    }
+  .sidebar, .scroll, .footer, .section_fantasies, .section_process, .savings_icon, .header--button {
+    display: none
+  }
   
+  .section {
+    max-width: 1024px;
+  }
 
+  .section_content {
+    text-align: center;
+    font: normal 18px 'FuturaBookC';
+    color: $text-color--light;
+  }
 
-    .slider {
-        display: grid;
-        grid-template-areas: 
-                            'header header'
-                            'descriptions items'
-                            'descriptions items';
-        grid-template-rows: 245px 241px 220px ;
-        grid-template-columns: 30% 70%;
-        grid-gap: 10px;
-        height: auto;
-        margin: 0;
-    
-        &_play-desktop {
-            display: none;
-        }
-         &_play-mobile {
-            display:block;
-            position: absolute;
-            top: 50%;
-            left: 93%;
-            transform: translate(-50%, -50%);
-            line-height: 0.6rem;
-            z-index: 20;
-            &-left {
-                left: 7%;
-            }
-         }
-         
-    
-        &_header {
-            grid-area: header;
-            padding-top: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 34px;
-            &--header {
-                font: normal 22px 'Yeseva One';
-                //text-transform: uppercase;
-                //color: $text-color--main;
-                //width: 150px;
-                text-align: center;
-                line-height: 1.5em;
-                margin-bottom:0;
-            }
-            &--text {
-                font: normal 16px 'FuturaBookC';
-                //color: $text-color--light;
-                max-width: 312px;
-                line-height: 1.5em;
-                text-align: center;
-                
-            }
-        }
-    
-        &--controls {
-            //grid-area: controls;
-            display: none;
-    
-        }
-    
-        &_items_headings {
-            grid-area: items_headings;
-            display: none;
-            
-    
-            &_list {
-                list-style: none;
-                display: flex;
-                text-align: center;
-                justify-content: left;
-                margin-left: 0;
-                padding:0 0 0 0;
-                margin-bottom: 0;
-                &--item {
-                    margin-right: 60px;
-                }
-                &--link {
-                    color: $text-color--light;
-                    text-transform: uppercase;
-                    font: normal 14px 'Yeseva One';
-                    &:hover {
-                    color: $text-color--main;
-                    }
-                }
-            }
-        }
-    
-        &_descriptions {
-            //grid-area: descriptions;
-            //display: flex;
-            //flex-wrap: wrap;
-            max-width: 340px;
-            padding-bottom: 0;
-            padding-top: 0;
-            align-items: center;
-            flex-wrap: nowrap;
-            flex-direction: column;
-            justify-content: flex-start;
-        }
-    
-        &_descriptor {
-            width:50%;
-            &--head {
-                //color: $text-color--main;
-                //text-transform: uppercase;
-                font: normal 14px 'Yeseva One';
-            }
-            &--text {
-                //color: $text-color--light;
-                font: normal 14px 'FuturaBookC';
-            }
-        }
-    
-    
-        &--indicators {
-            list-style: none;
-            margin: 0;
-            display: flex;
-            padding: 2px 14px 0 30px;
-    
-        }
-    
-        &--indicator {
-            width: 10px;
-            height: 10px;
-            background-color: $text-color--light;
-            border-radius: 50%;
-            filter: brightness(30%);
-            margin-right: 16px;
-            &-active {
-                filter: brightness(100%);  
-            }
-        }
-    
-        &--items {
-            //grid-area: items;
-            //display: flex;
-            //justify-content: center;
-            //@at-rootoverflow: hidden;
-            //margin-bottom: 20px;
-            position: relative;
-            width: fit-content;
-    
-        }
+  .slider_header_projects::after {
+    display: none;
+  }
+
+  .slider {
+    display: grid;
+    grid-template-areas: 
+    'header header'
+    'descriptions items'
+    'descriptions items';
+    grid-template-rows: 245px 241px 220px ;
+    grid-template-columns: 30% 70%;
+    grid-gap: 10px;
+    height: auto;
+    margin: 0;
+    &_play-desktop {
+      display: none;
+    }
+    &_play-mobile {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 93%;
+      transform: translate(-50%, -50%);
+      line-height: 0.6rem;
+      z-index: 20;
+      &-left {
+        left: 7%;
+      }
+    }
+    &_header {
+      grid-area: header;
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 34px;
+      &--header {
+        font: normal 22px 'Yeseva One';
+        text-align: center;
+        line-height: 1.5em;
+        margin-bottom: 0;
+      }
+      &--text {
+        font: normal 16px 'FuturaBookC';
+        max-width: 312px;
+        line-height: 1.5em;
+        text-align: center;  
+      }
+    }
+    &--controls {
+      display: none;
+    }
+    &_items_headings {
+      grid-area: items_headings;
+      display: none;
+      &_list {
+        list-style: none;
+        display: flex;
+        text-align: center;
+        justify-content: left;
+        margin-left: 0;
+        padding: 0;
+        margin-bottom: 0;
         &--item {
-            display: none;
-            margin: 0;
-            &-active {
-                display: block;
-            }
-
+          margin-right: 60px;
         }
-
-
-
-       // &--image {
-       //     display: none;
-       // }
-      //  &--image-mobile {
-       //     display: block;
-      //  }
-    
+        &--link {
+          color: $text-color--light;
+          text-transform: uppercase;
+          font: normal 14px 'Yeseva One';
+          &:hover {
+            color: $text-color--main;
+          }
+        }
+      }
     }
-
-    .tile_content--header {
-        font-size: 15px;
+    &_descriptions {
+      max-width: 340px;
+      padding-bottom: 0;
+      padding-top: 0;
+      align-items: center;
+      flex-wrap: nowrap;
+      flex-direction: column;
+      justify-content: flex-start;
     }
-   .tile_content--item {
-       font-size: 13px;
-   }
-   .tile_content--footer {
+    &_descriptor {
+      width: 50%;
+      &--head {
+        font: normal 14px 'Yeseva One';
+      }
+      &--text {
+        font: normal 14px 'FuturaBookC';
+      }
+    }
+    &--indicators {
+      list-style: none;
+      margin: 0;
+      display: flex;
+      padding: 2px 14px 0 30px;
+    }
+    &--indicator {
+      width: 10px;
+      height: 10px;
+      background-color: $text-color--light;
+      border-radius: 50%;
+      filter: brightness(30%);
+      margin-right: 16px;
+      &-active {
+        filter: brightness(100%);  
+      }
+    }
+    &--items {
+      position: relative;
+      width: fit-content;
+    }
+    &--item {
+      display: none;
+      margin: 0;
+      &-active {
+        display: block;
+      }
+    }
+  }
+
+  .tile_content--header {
     font-size: 15px;
-}
+  }
+   
+  .tile_content--item {
+    font-size: 13px;
+  }
+   
+  .tile_content--footer {
+    font-size: 15px;
+  }
 
-
-.form {
+  .form {
     display: flex;
     flex-direction: column;
     max-width: 100%;
     background-color: $text-color--black;
-    padding: 0px 0px 0px 0px;
+    padding: 0;
     &-wide_centered {
-        padding: 0px 0px 0px 0px;
-        max-width: 100%;
-        align-items: center;
+      padding: 0;
+      max-width: 100%;
+      align-items: center;
     }
     &-lighter {
-        background-color: $text-color--darkest;
+      background-color: $text-color--darkest;
     }
     &--header {
-        font: normal 20px 'FuturaDemiC';
-        color: $text-color--light;
-        align-self: center;
-        text-align: center;
-        max-width: 100%;
-        margin: 0;
-        &-uppercase {
-            text-transform: uppercase;
-        }
-
+      font: normal 20px 'FuturaDemiC';
+      color: $text-color--light;
+      align-self: center;
+      text-align: center;
+      max-width: 100%;
+      margin: 0;
+      &-uppercase {
+        text-transform: uppercase;
+      }
     }
-
     &_fields {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        justify-content: space-between;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      justify-content: space-between;
     }
-
     &--field {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        border-bottom: 1px solid gray;
-        padding-top: 46px;
-        &-left_aligned {
-            align-self: flex-start;
-            width: 100%;
-        }
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      border-bottom: 1px solid gray;
+      padding-top: 46px;
+      &-left_aligned {
+        align-self: flex-start;
+        width: 100%;
+      }
     }
-    
     &--label {
-        font: normal 15px 'FuturaBookC';
-        color: $text-color--light;
-        opacity: 0.5;
+      font: normal 15px 'FuturaBookC';
+      color: $text-color--light;
+      opacity: 0.5;
     }
     &--input {
-        font: normal 18px 'FuturaMediumC';
+      font: normal 18px 'FuturaMediumC';
+      color: $text-color--light;
+      border: none;
+      background-color: $text-color--black;
+      &::placeholder {
         color: $text-color--light;
-        border: none;
-        background-color: $text-color--black;
-        &::placeholder {
-            color: $text-color--light;
-        }
-        &-wide {
-            width:232px;
-        }
+      }
+      &-wide {
+        width: 232px;
+      }
     }
     &--button {
-        width: 340px;
-        height: 51px;
-        font-size: 15px;
-        margin-top: 35px;
-        margin-left: 195px;
-        &-centered {
-            margin-left: 0px;
-        }
+      width: 340px;
+      height: 51px;
+      font-size: 15px;
+      margin-top: 35px;
+      margin-left: 195px;
+      &-centered {
+        margin-left: 0;
+      }
     }
-
     &--checkbox {
-        font: normal 16px 'FuturaBookC';
-         color: $text-color--light;
-         padding-top:20px;
+      font: normal 16px 'FuturaBookC';
+      color: $text-color--light;
+      padding-top:20px;
     }
-}    
+  }    
 
-
-
-
-
-.main_image {
+  .main_image {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -1736,262 +1542,214 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     padding: 45px 18px 0 18px;
     margin-bottom: 0;
     width: 100%;
-}
+  }
    
-.first_section {
+  .main_section {
     background-color: $text-color--darkest;
-}
+  }
 
-    .section_projects {
-    
-        padding: 0 18px 0 18px;
-        background-color: $text-color--darkest;
-    }
-    
+  .section_projects {
+    padding: 0 18px 0 18px;
+    background-color: $text-color--darkest;
+  }
 
- 
-.section_control {
-    //display: flex;
-    //flex-direction: column;
-   // align-items: center;
+  .section_control {
     margin-bottom: 35px;
     background: linear-gradient(180deg, $text-color--darkest 0%, $text-color--darkest 97%, white 97%, #FFFFFF 100%);
     padding: 30px 18px 0 18px;
     &--header {
-        color: $text-color--light;
+      color: $text-color--light;
     }
     &--icon {
-        margin-bottom:30px;
+      margin-bottom: 30px;
     }
     &--video {
-        display:none;
-        &-mobile {
-            display:block;
-            line-height: 0.6rem;
-            margin-bottom: 20px;
-        }
+      display: none;
+      &-mobile {
+        display: block;
+        line-height: 0.6rem;
+        margin-bottom: 20px;
+      }
     }
     &--divider {
-        margin-bottom:5px;
+      margin-bottom: 5px;
     }
-
-
     &--content {
-        //max-width: 375px;
-        margin-bottom: 0;
-        line-height: 1.5em;
-    &-desktop {
+      margin-bottom: 0;
+      line-height: 1.5em;
+      &-desktop {
         display:none;
-    }  
-    &-mobile {
+      }  
+      &-mobile {
         display:block;
-    }  
-      
+      }  
     }
     &_form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 800px;
+      &--field {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        max-width: 800px;
-        &--field {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            border-bottom: 1px solid $text-color--light;
-            padding-right: 0;
-            margin-top: 30px;
-            width: 100%;
+        justify-content: space-around;
+        border-bottom: 1px solid $text-color--light;
+        padding-right: 0;
+        margin-top: 30px;
+        width: 100%;
+      }
+      &--label {
+        font: normal 15px 'FuturaBookC';
+        color: $text-color--light;
+        opacity: 0.5;
+      }
+      &--input {
+        font: normal 18px 'FuturaBookC';
+        color: $text-color--light;
+        border: none;
+        background-color: $text-color--darkest;
+        &::placeholder {
+          background-color: $text-color--darkest;
+          color: $text-color--light;
         }
-        
-        &--label {
-            font: normal 15px 'FuturaBookC';
-             color: $text-color--light;
-             opacity: 0.5;
-        }
-        &--input {
-            font: normal 18px 'FuturaBookC';
-             color: $text-color--light;
-             border: none;
-             background-color: $text-color--darkest;
-             
-             &::placeholder {
-                background-color: $text-color--darkest;
-                color: $text-color--light;
-            }
-        }
-        &--button {
-            width: 340px;
-            height: 51px;
-            font-size: 15px;
-            order:99
-        }
-
-        &--checkbox {
-            font: normal 16px 'FuturaBookC';
-             color: $text-color--light;
-             padding-top:25px;
-             margin-bottom: 60px;
-        }
+      }
+      &--button {
+        width: 340px;
+        height: 51px;
+        font-size: 15px;
+        order: 99
+      }
+      &--checkbox {
+        font: normal 16px 'FuturaBookC';
+        color: $text-color--light;
+        padding-top: 25px;
+        margin-bottom: 60px;
+      }
     }    
-}
+  }
 
-.section_request {
+  .section_request {
     padding-bottom: 40px;
-}
+  }
 
-.section_request .form {
-    padding: 30px 45px 27px 45px;;
-}
+  .section_request .form {
+    padding: 30px 45px 27px 45px;
+  }
 
+  .section_fantasies-mobile {
+    display: flex;
+    flex-direction: column;
+    padding: 0 18px 0 18px;    
+    background: linear-gradient(180deg, white 0%, white 56%, $text-color--darkest  56%, $text-color--darkest  100%);
+  }
 
-    .section_fantasies-mobile {
-        display: flex;
-        flex-direction: column;
-        padding: 0 18px 0 18px;    
-        background: linear-gradient(180deg, white 0%, white 56%, $text-color--darkest  56%, $text-color--darkest  100%);
+  .section_fantasies-mobile .slider_header {
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    &--header {
+      margin-top: 0;
     }
+  }
     
-    .section_fantasies-mobile .slider_header {
-        padding-top: 0;
-        margin-top:0;
-        margin-bottom: 0;
-        //align-items: top;
-        &--header {
-            margin-top:0;
-        }
-    
+  .section_fantasies-mobile .slider {
+    display: grid;
+    grid-template-areas: 
+    'header'
+    'items';
+    grid-template-rows: 100px 500px;
+    grid-template-columns: 100%;
+    justify-items: center;
+    height: auto;
+    margin: 0;
+  }
+
+  .section_fantasies-mobile .slider--image-tablet {
+    display: block;
+  }
+
+  .section_design {
+    background: linear-gradient(180deg, $text-color--darkest 100% );
+    &--header {
+      color: $text-color--light;
     }
-    
-    
-    .section_fantasies-mobile .slider {
-        display: grid;
-        grid-template-areas: 
-                            'header'
-                            'items';
-                            
-        grid-template-rows: 100px 500px;
-        grid-template-columns: 100%;
-        justify-items: center;
-        height: auto;
-        margin: 0;
-    }
+  }
 
-    .section_fantasies-mobile .slider--image-tablet {
-        display: block;
-    }
+  .section_team {
+    background: linear-gradient(180deg,$text-color--darkest 50%, white 50%);
+    padding-top: 25px;
+    margin-bottom: 40px;
+  }
 
-    .section_design {
-        background: linear-gradient(180deg, $text-color--darkest 100% );
-
-        &--header {
-            color:$text-color--light;
-        }
-    }
-
-    .section_team {
-      background: linear-gradient(180deg,$text-color--darkest 50%, white 50%);
-      padding-top:25px;
-      margin-bottom: 40px;
-    }
-
-.section_team--content {
-
+  .section_team--content {
     color: $text-color--darken;
     margin-top: 10px;
     line-height: 1.7;
-}
+  }
 
-    .section_question {
-        display: flex;
-        justify-content: center;
-        background: linear-gradient(180deg,  $text-color--darkest 100%);
-        padding: 30px 18px 0 18px;
-    }
+  .section_question {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(180deg,  $text-color--darkest 100%);
+    padding: 30px 18px 0 18px;
+  }
     
-    .section_clients--content {
+  .section_clients--content {
+    color: $text-color--darken;
+  }
 
-        color: $text-color--darken;
-        //margin-top: 10px;
-       // line-height: 1.7;
+  .section_address {
+    padding-bottom: 0;
+    &--content {
+      font: normal 18px 'Yeseva One';
+      max-width: 310px;
     }
-
-
-
-    .section_address {
-        //display: flex;
-       // flex-direction: column;
-        //background-color: $text-color--darkest;
-       // align-items: center;
-       // padding-top: 50px;
-       padding-bottom: 0;
-       &--content {
-          font: normal 18px 'Yeseva One';
-       //     color: $text-color--main;
-       //     text-transform: uppercase;
-          max-width: 310px;
-         //  text-align: center;
-         //  line-height: 1.5em;
-        }
-       &_icons{
-           &-desktop {
-               display: none;
-           }
-           &-mobile {
-            display: block;
-        }
-       }
-        &--map-mobile {
-            display: block;
-        }
-        &--map {
-            display: none;
-        }
+    &_icons{
+      &-desktop {
+        display: none;
+      }
+      &-mobile {
+        display: block;
+      }
     }
-
-
-
-
-
+    &--map-mobile {
+      display: block;
+    }
+    &--map {
+      display: none;
+    }
+  }
 }
-
-
-
 
 @media (max-width: 960px) {
-    .section {
-        max-width: 960px;
-    }
+  
+  .section {
+    max-width: 960px;
+  }
 
-    .tile {
-        //display: flex;
-        //flex-direction: column;
-        align-items: flex-start;
-        margin-bottom: 180px;
-        max-width: 340px;
-        //position:relative;
-        &--image-mobile {
-            display:block;
-        }
-        &--image{
-            display:none;
-        }
-        &-centered {
-            align-items: center;
-        }
+  .tile {
+    align-items: flex-start;
+    margin-bottom: 180px;
+    max-width: 340px;
+    &--image-mobile {
+      display: block;
     }
+    &--image{
+      display: none;
+    }
+    &-centered {
+      align-items: center;
+    }
+  }
     
-    .tiles_block {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    
-    }
+  .tiles_block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
 
-
-
-
-.tile_content {
+  .tile_content {
     background-color: $text-color--light;
     width: 84.18%;
     position: absolute;
@@ -1999,230 +1757,178 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     &-adjusted {
       top: 275px;
     }
-   // &-top {
-    //    top: 0;
-    //    left:-40px;
-    //    width: 376px;
-   // }
     &--header{
-        font: normal 15px 'Yeseva One';
-        //color: $text-color--darken;
-       // margin: 26px 0 10px 34px;
-       // &-right {
-       //     margin-left: 140px;
-       // }
-        &-centered {
-       //     margin-left: 0;
-       //     margin-bottom: 0;
-       //     text-align: center;
-       font: normal 18px 'Yeseva One';
-        }
+      font: normal 15px 'Yeseva One';
+      &-centered {
+        font: normal 18px 'Yeseva One';
+      }
     }
-
     &--list {
-        padding-inline-start: 0;
-        margin: 0 0 0 30px;
-        padding: 0 0 40px 0px;
-        &-no_marks {
-            list-style:none;
-            padding:25px 30px 55px 20px;
-            margin:0;
-        }
-        &-centered {
-            list-style:none;
-            padding:10px 0px 25px 0px;
-            margin:0;
-            text-align: center;
-            font: normal 18px 'Yeseva One';
-        }
-        &-desktop {
-            display: none;
-        }
-        &-mobile {
-            display: block;
-        }
+      padding-inline-start: 0;
+      margin: 0 0 0 30px;
+      padding: 0 0 40px 0px;
+      &-no_marks {
+        list-style: none;
+        padding: 25px 30px 55px 20px;
+        margin: 0;
+      }
+      &-centered {
+        list-style: none;
+        padding: 10px 0px 25px 0px;
+        margin: 0;
+        text-align: center;
+        font: normal 18px 'Yeseva One';
+      }
+      &-desktop {
+        display: none;
+      }
+      &-mobile {
+        display: block;
+      }
     }
     &--item {
-        font: normal 13px 'FuturaBookC';
-       color: $text-color--dark;
-        line-height: 1.8em;
-        &-large {
-            font: normal 18px 'FuturaBookC'; 
-        }
-      
-        
+      font: normal 13px 'FuturaBookC';
+      color: $text-color--dark;
+      line-height: 1.8em;
+      &-large {
+        font: normal 18px 'FuturaBookC'; 
+      }  
     }
-
     &--footer {
-        font: normal 15px 'Yeseva One';
-        //color: $text-color--light;
-        //text-transform: uppercase;
-        //background-color: $text-color--main;
-       // margin: 0 0 0 0;
-        //text-align: center;
-        padding: 11px 0 11px 0;
-        //position: absolute;
-        //bottom:-26px;
-        //left:0;
-       // width: 100%;
-
-        &-small {
-            font-size: 13px;
-        }
-        //&-narrow {
-        //    width: 69%;
-       // }
-
+      font: normal 15px 'Yeseva One';
+      padding: 11px 0 11px 0;
+      &-small {
+        font-size: 13px;
+      }
     }
-}
+  }
 
-.section_repair {
+  .section_repair {
     margin-bottom: 30px;
-}
+  }
 
-.section_repair--tiles .tile:first-child {
+  .section_repair--tiles .tile:first-child {
     margin-right: 0;
-}
+  }
 
-.section_repair--tiles .tile:nth-child(2) {
+  .section_repair--tiles .tile:nth-child(2) {
     margin-right: 0;
-}
+  }
  
-.section_design {
-   padding-bottom: 30px;
-}
-.section_design--tiles .tile:first-child {
+  .section_design {
+    padding-bottom: 30px;
+  }
+  .section_design--tiles .tile:first-child {
     margin-right: 0;
-}
+  }
 
-.section_design--tiles .tile:nth-child(2){
+  .section_design--tiles .tile:nth-child(2){
     margin-right: 0;
-}
+  }
 
-    .section_clients {
+  .section_clients {
+    display: none;
+  }
 
-        display: none;
+  .header .navbar_list--item:nth-child(5) {
+    display: none;
+  }
+
+  .section_team {
+    background: linear-gradient(180deg, $text-color--darkest 100% );
+    margin-bottom: 0;
     }
 
-    .header .navbar_list--item:nth-child(5) {
-        display: none;
-    }
+  .section_team--tiles .tile:last-child {
+    margin-bottom: 110px;
+  }
 
-    .section_team {
+  .section_team--tiles .tile:first-child {
+    margin-left: 60px;
+  }
 
-         background: linear-gradient(180deg, $text-color--darkest 100% );
-         margin-bottom: 0px;
-
-    }
-
-
-    .section_team--tiles .tile:last-child {
-
-        margin-bottom: 110px;
-    }
-
-    .section_team--tiles .tile:first-child {
-
-        margin-left: 60px;
-    }
-.section_question {
+  .section_question {
     padding-top: 40px;
-}
-.section_team--divider {
+  }
 
-    margin-top:0;
-}
-    .section_team--content {
-
-        color: $text-color--light;
-       
-    }
-
+  .section_team--divider {
+    margin-top: 0;
+  }
+  
+  .section_team--content {
+    color: $text-color--light;  
+  }
 }
 
 @media (max-width: 768px) {
-    .section {
-        max-width: 768px;
-    }
     
-    .section_request,  .navbar, .section_team--content, .section_team--divider {
+  .section {
+    max-width: 768px;
+  }
 
-        display: none;
-    }
-.slider {
+  .section_request, .navbar, .section_team--content, .section_team--divider {
+    display: none;
+  }
+
+  .slider {
     grid-template-rows: 245px 241px 160px;
+  }
 }
-}
-
-
 
 @media (max-width: 640px) {
 
-    
-
-
-.body_wrapper {
+  .body_wrapper {
     max-width: 640px;
     box-sizing: border-box;
-}
+  }
 
-.header {
+  .header {
     max-width: 640px;
-    height:57px;
+    height: 57px;
     margin: 0 auto;
     justify-content: space-between;
     padding: 0 25px 0 25px;
-  
     &--button {
-        display:none;
+      display: none;
     }
     &--logo {
-        font: normal 12px 'FuturaDemiC';
-        text-transform: uppercase;
-        color: $text-color--main;
-        margin-left: 0px;
+      font: normal 12px 'FuturaDemiC';
+      text-transform: uppercase;
+      color: $text-color--main;
+      margin-left: 0;
     }
-}
+  }
 
-.section {
+  .section {
     max-width: 640px;
-}
+  }
 
-.section_header {
-    
+  .section_header {
     font: normal 22px 'Yeseva One';
-} 
+  } 
 
-.tiles_block {
+  .tiles_block {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+  }
 
-}
-
-
-.tile {
-    //display: flex;
-    //flex-direction: column;
+  .tile {
     align-items: flex-start;
     margin-bottom: 180px;
-    //position:relative;
     &--image-mobile {
-        display:block;
+      display: block;
     }
     &--image{
-        display:none;
+      display: none;
     }
     &-centered {
-        align-items: center;
+      align-items: center;
     }
-}
+  }
 
-
-
-
-.tile_content {
+  .tile_content {
     background-color: $text-color--light;
     width: 84.18%;
     position: absolute;
@@ -2230,710 +1936,557 @@ $paragraph_font: normal normal normal 20px 'FuturaBookC';
     &-adjusted {
       top: 275px;
     }
-   // &-top {
-    //    top: 0;
-    //    left:-40px;
-    //    width: 376px;
-   // }
     &--header{
-        font: normal 15px 'Yeseva One';
-        //color: $text-color--darken;
-       // margin: 26px 0 10px 34px;
-       // &-right {
-       //     margin-left: 140px;
-       // }
-        &-centered {
-       //     margin-left: 0;
-       //     margin-bottom: 0;
-       //     text-align: center;
-       font: normal 18px 'Yeseva One';
-        }
+      font: normal 15px 'Yeseva One';
+      &-centered {
+        font: normal 18px 'Yeseva One';
+      }
     }
-
     &--list {
-        padding-inline-start: 0;
-        margin: 0 0 0 30px;
-        padding: 0 0 40px 0px;
-        &-no_marks {
-            list-style:none;
-            padding:25px 30px 55px 20px;
-            margin:0;
-        }
-        &-centered {
-            list-style:none;
-            padding:10px 0px 25px 0px;
-            margin:0;
-            text-align: center;
-            font: normal 18px 'Yeseva One';
-        }
-        &-desktop {
-            display: none;
-        }
-        &-mobile {
-            display: block;
-        }
+      padding-inline-start: 0;
+      margin: 0 0 0 30px;
+      padding: 0 0 40px 0px;
+      &-no_marks {
+        list-style:none;
+        padding: 25px 30px 55px 20px;
+        margin: 0;
+      }
+      &-centered {
+        list-style: none;
+        padding: 10px 0px 25px 0px;
+        margin: 0;
+        text-align: center;
+        font: normal 18px 'Yeseva One';
+      }
+      &-desktop {
+        display: none;
+      }
+      &-mobile {
+        display: block;
+      }
     }
     &--item {
-        font: normal 13px 'FuturaBookC';
-       color: $text-color--dark;
-        line-height: 1.8em;
-        &-large {
-            font: normal 18px 'FuturaBookC'; 
-        }
-      
-        
+      font: normal 13px 'FuturaBookC';
+      color: $text-color--dark;
+      line-height: 1.8em;
+      &-large {
+        font: normal 18px 'FuturaBookC'; 
+      }  
     }
-
     &--footer {
-        font: normal 15px 'Yeseva One';
-        //color: $text-color--light;
-        //text-transform: uppercase;
-        //background-color: $text-color--main;
-       // margin: 0 0 0 0;
-        //text-align: center;
-        padding: 11px 0 11px 0;
-        //position: absolute;
-        //bottom:-26px;
-        //left:0;
-       // width: 100%;
-
-        &-small {
-            font-size: 13px;
-        }
-        //&-narrow {
-        //    width: 69%;
-       // }
-
+      font: normal 15px 'Yeseva One';
+      padding: 11px 0 11px 0;
+      &-small {
+        font-size: 13px;
+      }
     }
-}
+  }
 
-.slider {
+  .slider {
     display: grid;
     grid-template-areas: 
-                        'header'
-                        'items'
-                        'descriptions';
+    'header'
+    'items'
+    'descriptions';
     grid-template-rows: 245px 241px 200px ;
     grid-template-columns: 100%;
     grid-gap: 10px;
     height: auto;
     margin: 0;
     justify-items: center;
-
     &_play-desktop {
-        display: none;
+      display: none;
     }
-     &_play-mobile {
-        display:block;
-        position: absolute;
-        top: 50%;
-        left: 93%;
-        transform: translate(-50%, -50%);
-        line-height: 0.6rem;
-        z-index: 20;
-        &-left {
-            left: 7%;
-        }
-     }
-     
-
+    &_play-mobile {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 93%;
+      transform: translate(-50%, -50%);
+      line-height: 0.6rem;
+      z-index: 20;
+      &-left {
+        left: 7%;
+      }
+    }
     &_header {
-        grid-area: header;
-        padding-top: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 24px;
-        &--header {
-            font: normal 22px 'Yeseva One';
-            //text-transform: uppercase;
-            //color: $text-color--main;
-            //width: 150px;
-            text-align: center;
-            line-height: 1.5em;
-            margin-bottom:0;
-        }
-        &--text {
-            font: normal 14px 'FuturaBookC';
-            //color: $text-color--light;
-            max-width: 312px;
-            line-height: 1.5em;
-            text-align: center;
-            
-        }
+      grid-area: header;
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 24px;
+      &--header {
+        font: normal 22px 'Yeseva One';
+        text-align: center;
+        line-height: 1.5em;
+        margin-bottom: 0;
+      }
+      &--text {
+        font: normal 14px 'FuturaBookC';
+        max-width: 312px;
+        line-height: 1.5em;
+        text-align: center; 
+      }
     }
-
     &--controls {
-        //grid-area: controls;
-        display: none;
-
+      display: none;
     }
-
     &_items_headings {
-        grid-area: items_headings;
-        display: none;
-        
-
-        &_list {
-            list-style: none;
-            display: flex;
-            text-align: center;
-            justify-content: left;
-            margin-left: 0;
-            padding:0 0 0 0;
-            margin-bottom: 0;
-            &--item {
-                margin-right: 60px;
-            }
-            &--link {
-                color: $text-color--light;
-                text-transform: uppercase;
-                font: normal 14px 'Yeseva One';
-                &:hover {
-                color: $text-color--main;
-                }
-            }
-        }
-    }
-
-    &_descriptions {
-        //grid-area: descriptions;
-        //display: flex;
-        //flex-wrap: wrap;
-        max-width: 340px;
-        padding-bottom: 20px;
-        padding-top: 10px;
-            align-items: center;
-            flex-wrap: wrap;
-            flex-direction: row;
-            justify-content: center;
-        
-    }
-
-    &_descriptor {
-        width:50%;
-        &--head {
-            //color: $text-color--main;
-            //text-transform: uppercase;
-            font: normal 14px 'Yeseva One';
-        }
-        &--text {
-            //color: $text-color--light;
-            font: normal 14px 'FuturaBookC';
-        }
-    }
-
-
-    &--indicators {
+      grid-area: items_headings;
+      display: none;
+      &_list {
         list-style: none;
-        margin: 0;
         display: flex;
-        padding: 2px 14px 0 30px;
-
-    }
-
-    &--indicator {
-        width: 10px;
-        height: 10px;
-        background-color: $text-color--light;
-        border-radius: 50%;
-        filter: brightness(30%);
-        margin-right: 16px;
-        &-active {
-            filter: brightness(100%);  
+        text-align: center;
+        justify-content: left;
+        margin-left: 0;
+        padding: 0;
+        margin-bottom: 0;
+        &--item {
+          margin-right: 60px;
         }
+        &--link {
+          color: $text-color--light;
+          text-transform: uppercase;
+          font: normal 14px 'Yeseva One';
+          &:hover {
+            color: $text-color--main;
+          }
+        }
+      }
     }
-
+    &_descriptions {
+      max-width: 340px;
+      padding-bottom: 20px;
+      padding-top: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+    }
+    &_descriptor {
+      width: 50%;
+      &--head {
+        font: normal 14px 'Yeseva One';
+      }
+      &--text {
+        font: normal 14px 'FuturaBookC';
+      }
+    }
+    &--indicators {
+      list-style: none;
+      margin: 0;
+      display: flex;
+      padding: 2px 14px 0 30px;
+    }
+    &--indicator {
+      width: 10px;
+      height: 10px;
+      background-color: $text-color--light;
+      border-radius: 50%;
+      filter: brightness(30%);
+      margin-right: 16px;
+      &-active {
+        filter: brightness(100%);  
+      }
+    }
     &--items {
-        //grid-area: items;
-        //display: flex;
-        //justify-content: space-between;
-        //@at-rootoverflow: hidden;
-        //margin-bottom: 20px;
-        position: relative;
-    
-
+      position: relative;
     }
-    
     &--image {
-        display: none;
+      display: none;
     }
     &--image-mobile {
-        display: block;
+      display: block;
     }
+  }
 
-}
-
-
-
-.section_content {
+  .section_content {
     text-align: center;
     font: normal 14px 'FuturaBookC';
     color: $text-color--light;
+  }
 
-}
-
-
-
-.form {
+  .form {
     display: flex;
     flex-direction: column;
     max-width: 100%;
     background-color: $text-color--black;
-    padding: 0px 0px 0px 0px;
+    padding: 0;
     &-wide_centered {
-        padding: 0px 0px 0px 0px;
-        max-width: 100%;
-        align-items: center;
+      padding: 0;
+      max-width: 100%;
+      align-items: center;
     }
     &-lighter {
-        background-color: $text-color--darkest;
+      background-color: $text-color--darkest;
     }
     &--header {
-        font: normal 20px 'FuturaDemiC';
-        color: $text-color--light;
-        align-self: center;
-        text-align: center;
-        max-width: 100%;
-        margin: 0;
-        &-uppercase {
-            text-transform: uppercase;
-        }
-
+      font: normal 20px 'FuturaDemiC';
+      color: $text-color--light;
+      align-self: center;
+      text-align: center;
+      max-width: 100%;
+      margin: 0;
+      &-uppercase {
+        text-transform: uppercase;
+      }
     }
-
     &_fields {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        justify-content: space-between;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      justify-content: space-between;
     }
-
     &--field {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        border-bottom: 1px solid gray;
-        padding-top: 46px;
-        &-left_aligned {
-            align-self: flex-start;
-            width: 100%;
-        }
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      border-bottom: 1px solid gray;
+      padding-top: 46px;
+      &-left_aligned {
+        align-self: flex-start;
+        width: 100%;
+      }
     }
-    
     &--label {
-        font: normal 15px 'FuturaBookC';
-        color: $text-color--light;
-        opacity: 0.5;
+      font: normal 15px 'FuturaBookC';
+      color: $text-color--light;
+      opacity: 0.5;
     }
     &--input {
-        font: normal 18px 'FuturaMediumC';
+      font: normal 18px 'FuturaMediumC';
+      color: $text-color--light;
+      border: none;
+      background-color: $text-color--black;
+      &::placeholder {
         color: $text-color--light;
-        border: none;
-        background-color: $text-color--black;
-        &::placeholder {
-            color: $text-color--light;
-        }
-        &-wide {
-            width:232px;
-        }
+      }
+      &-wide {
+        width: 232px;
+      }
     }
     &--button {
-        width: 340px;
-        height: 51px;
-        font-size: 15px;
-        margin-top: 35px;
-        margin-left: 195px;
-        &-centered {
-            margin-left: 0px;
-        }
+      width: 340px;
+      height: 51px;
+      font-size: 15px;
+      margin-top: 35px;
+      margin-left: 195px;
+      &-centered {
+        margin-left: 0px;
+      }
     }
-
     &--checkbox {
-        font: normal 16px 'FuturaBookC';
-         color: $text-color--light;
-         padding-top:20px;
+      font: normal 16px 'FuturaBookC';
+      color: $text-color--light;
+      padding-top: 20px;
     }
-}    
+  }    
 
-
-
-.main_image {
+  .main_image {
     background: url(assets/images/section1_mobile.png);
     width: 100%;
-    
-    //max-height: 476px;
     height: 431px;
-    //height: calc(100vw*0.52138643067);
- 
-    
-}
+  }
 
-
-
-.main_content {
+  .main_content {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
-    max-width:338px;
+    max-width: 338px;
     &--button {
-        flex: 0 0 auto;
-        width: 338px;
-        height: 51px;
-        margin-right: 10px;
-        margin-bottom: 25px;
-        &-transparent {
-            background-color: transparent;
-            border: 1px solid $text-color--light;
-        }
+      flex: 0 0 auto;
+      width: 338px;
+      height: 51px;
+      margin-right: 10px;
+      margin-bottom: 25px;
+      &-transparent {
+        background-color: transparent;
+        border: 1px solid $text-color--light;
+      }
     }
     &--header {
-        font: normal 23px 'Yeseva One';
-        color: $text-color--light;
-        margin: 0.2em 0 0.2em 0;
-        line-height: 1.38em;
+      font: normal 23px 'Yeseva One';
+      color: $text-color--light;
+      margin: 0.2em 0 0.2em 0;
+      line-height: 1.38em;
     }
     &--text {
-        font: normal 18px 'FuturaBookC';
-        color: $text-color--light;
-        margin: 0.5em 0 1.5em 0;
-        line-height: 1.5em;
-        &-desktop {
-            display: none;
-        }
-        &-mobile {
-            display:block;
-            margin-right: 30px;
-        }
+      font: normal 18px 'FuturaBookC';
+      color: $text-color--light;
+      margin: 0.5em 0 1.5em 0;
+      line-height: 1.5em;
+      &-desktop {
+        display: none;
+      }
+      &-mobile {
+        display: block;
+        margin-right: 30px;
+      }
     }
-}
+  }
 
-
-.section_projects {
-    
+  .section_projects {
     padding: 0 18px 0 18px;
+  }
 
-}
-
-
-
-
-.section_control {
-    //display: flex;
-    //flex-direction: column;
-   // align-items: center;
+  .section_control {
     margin-bottom: 35px;
     background: linear-gradient(180deg, $text-color--darkest 0%, $text-color--darkest 97%, white 97%, #FFFFFF 100%);
     padding: 20px 18px 0 18px;
     &--header {
-        color: $text-color--light;
+      color: $text-color--light;
     }
     &--icon {
-        margin-bottom:30px;
+      margin-bottom: 30px;
     }
     &--video {
-        display:none;
-        &-mobile {
-            display:block;
-            line-height: 0.6rem;
-            margin-bottom: 20px;
-        }
+      display: none;
+      &-mobile {
+        display: block;
+        line-height: 0.6rem;
+        margin-bottom: 20px;
+      }
     }
     &--divider {
-        margin-bottom:5px;
+      margin-bottom: 5px;
     }
-
-
     &--content {
-        //max-width: 375px;
-        margin-bottom: 0;
-        line-height: 1.5em;
-    &-desktop {
-        display:none;
-    }  
-    &-mobile {
-        display:block;
-    }  
-      
+      margin-bottom: 0;
+      line-height: 1.5em;
+      &-desktop {
+        display: none;
+      }  
+      &-mobile {
+        display: block;
+      }  
     }
     &_form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 800px;
+      &--field {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        max-width: 800px;
-        &--field {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            border-bottom: 1px solid $text-color--light;
-            padding-right: 0;
-            margin-top: 30px;
-            width: 100%;
+        justify-content: space-around;
+        border-bottom: 1px solid $text-color--light;
+        padding-right: 0;
+        margin-top: 30px;
+        width: 100%;
+      }
+      &--label {
+        font: normal 15px 'FuturaBookC';
+        color: $text-color--light;
+        opacity: 0.5;
+      }
+      &--input {
+        font: normal 18px 'FuturaBookC';
+        color: $text-color--light;
+        border: none;
+        background-color: $text-color--darkest;
+        &::placeholder {
+          background-color: $text-color--darkest;
+          color: $text-color--light;
         }
-        
-        &--label {
-            font: normal 15px 'FuturaBookC';
-             color: $text-color--light;
-             opacity: 0.5;
-        }
-        &--input {
-            font: normal 18px 'FuturaBookC';
-             color: $text-color--light;
-             border: none;
-             background-color: $text-color--darkest;
-             
-             &::placeholder {
-                background-color: $text-color--darkest;
-                color: $text-color--light;
-            }
-        }
-        &--button {
-            width: 340px;
-            height: 51px;
-            font-size: 15px;
-            order:99
-        }
-
-        &--checkbox {
-            font: normal 16px 'FuturaBookC';
-             color: $text-color--light;
-             padding-top:25px;
-             margin-bottom: 60px;
-        }
+      }
+      &--button {
+        width: 340px;
+        height: 51px;
+        font-size: 15px;
+        order: 99
+      }
+      &--checkbox {
+        font: normal 16px 'FuturaBookC';
+        color: $text-color--light;
+        padding-top: 25px;
+        margin-bottom: 60px;
+      }
     }    
-}
+  }
 
-
-
-.section_repair {
-    //display: flex;
-    //flex-direction: column;
-   // align-items: center;
+  .section_repair {
     margin-bottom: 0;
     padding: 0 18px 0 18px;
     &--tiles {
-        width: 100%;
-        
+      width: 100%;  
     }
     &--icon {
-        margin-bottom:30px;
+      margin-bottom: 30px;
     }
-}
+  }
 
-.section_repair .tile_content {
-    width: 79.4%;
-}
+  .section_repair .tile_content {
+  width: 79.4%;
+  }
 
-.section_design {
-    //display: flex;
-    //flex-direction: column;
-   // align-items: center;
-   //background: linear-gradient(180deg, white 0%, #181818 0%,  #181818 100%,);
-    //padding-bottom: 270px;
+  .section_design {
     padding: 20px 18px 0 18px;
-    
     &--tiles {
-        width: 100%;
-       
+      width: 100%;  
     }
     &--content {
-        width: 100%;
-        margin-bottom: 30px;
-        line-height: 1.38em;
-        text-align: center;
-        font: normal 15px 'FuturaBookC';
-        color: $text-color--light;
+      width: 100%;
+      margin-bottom: 30px;
+      line-height: 1.38em;
+      text-align: center;
+      font: normal 15px 'FuturaBookC';
+      color: $text-color--light;
     }
     &--icon {
-        margin-bottom:15px;
+      margin-bottom: 15px;
     }
     &--header {
-        color:$text-color--light;
+      color: $text-color--light;
     }
-}
+  }
 
-.section_design .tile:first-child {
+  .section_design .tile:first-child {
     margin-bottom: 120px;
-   }
+  }
 
-
-.section_design .tile_content {
+  .section_design .tile_content {
     width: 79.4%;
-}
+  }
 
-
-.section_fantasies-mobile {
+  .section_fantasies-mobile {
     display: flex;
     flex-direction: column;
     padding: 0 18px 0 18px;    
     background: linear-gradient(180deg, white 0%, white 65%, $text-color--darkest 65%, $text-color--darkest  100%);
-}
+  }
 
-.section_fantasies-mobile .slider--image-tablet {
+  .section_fantasies-mobile .slider--image-tablet {
     display: none;
-}
+  }
 
-.section_fantasies-mobile .slider_header {
+  .section_fantasies-mobile .slider_header {
     padding-top: 0;
-    margin-top:0;
+    margin-top: 0;
     margin-bottom: 0;
     align-items: top;
     &--header {
-        margin-top:0;
+        margin-top: 0;
     }
+  }
 
-}
-
-
-.section_fantasies-mobile .slider {
+  .section_fantasies-mobile .slider {
     display: grid;
     grid-template-areas: 
-                        'header'
-                        'items';
-                        
+    'header'
+    'items';                  
     grid-template-rows: 100px 241px;
     grid-template-columns: 100%;
-        //grid-gap: 10px;
     height: auto;
     margin: 0;
-}
-.section_team {
-   // display: flex;
-   // flex-direction: column;
+  }
+
+  .section_team {
     align-items: center;
     background: linear-gradient(180deg, $text-color--darkest 100% );
-    //padding-top: 200px;
-  margin-bottom: 0;
-   padding: 15px 18px 0 18px;
+    margin-bottom: 0;
+    padding: 15px 18px 0 18px;
     &--header {
-        max-width: 100%;
-       
-        color: $text-color--light;
+      max-width: 100%;
+      color: $text-color--light;
     }
     &--header_content {
-        width: 100%;
-        color: $text-color--light;
-        margin-bottom: 80px;
-        line-height: 1.38em;
+      width: 100%;
+      color: $text-color--light;
+      margin-bottom: 80px;
+      line-height: 1.38em;
     }
-    
     &--content {
-        //max-width: 560px;
-        //color: $text-color--darken;
-        //line-height: 1.7em;
-        //margin-top: 10px;
-        display: none;
-        }
-        
-    
+      display: none;
+    }
     &--tiles {
-        width: 100%;
-        //display: flex;
-        flex-direction: column;
-        align-items: center;
-        //justify-content: space-between;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
     }
     &--icon {
-        margin-bottom:10px;
+      margin-bottom: 10px;
     }
     &--divider {
-        //margin-top: 130px;
-        display: none;
-       
+      display: none;
     }
-}
-.section_team .tile_content {
+  }
+
+  .section_team .tile_content {
     width: 76.64%;
-}
+  }
 
-.section_team .tile {
+  .section_team .tile {
     margin-bottom: 140px;
-}
+  }
 
 
-.section_team--tiles .tile:first-child {
+  .section_team--tiles .tile:first-child {
     margin-right: 0;
-    margin-left:0;
-}
+    margin-left: 0;
+  }
 
-.section_team--tiles .tile:nth-child(2){
+  .section_team--tiles .tile:nth-child(2){
     margin-right: 0;
-}
+  }
 
-
-
-.section_question {
+  .section_question {
     display: flex;
     justify-content: center;
     background: linear-gradient(180deg,  $text-color--darkest 100%);
     padding: 0px 18px 0 18px;
-}
+  }
 
-.section_address {
-    //display: flex;
-   // flex-direction: column;
-    //background-color: $text-color--darkest;
-   // align-items: center;
-   // padding-top: 50px;
-   padding-bottom: 0;
-   &--content {
+  .section_address {
+    padding-bottom: 0;
+    &--content {
       font: normal 18px 'Yeseva One';
-   //     color: $text-color--main;
-   //     text-transform: uppercase;
       max-width: 310px;
-     //  text-align: center;
-     //  line-height: 1.5em;
     }
-   &_icons{
-       &-desktop {
-           display: none;
-       }
-       &-mobile {
+    &_icons{
+      &-desktop {
+        display: none;
+      }
+      &-mobile {
         display: block;
+      }
     }
-   }
     &--map-mobile {
-        display: block;
+      display: block;
     }
     &--map {
-        display: none;
+      display: none;
     }
+  }
 }
-
-}
-
 
 @media (max-width: 375px) {
-
   
-
-
-    .body_wrapper {
-        max-width: 375px;
-        box-sizing: border-box;
-    }
+  .body_wrapper {
+    max-width: 375px;
+      box-sizing: border-box;
+  }
     
-    .header {
-        max-width: 375px;
-        height:57px;
-        margin: 0 auto;
-        justify-content: space-between;
-        padding: 0 25px 0 25px;
-      
-        &--button {
-            display:none;
-        }
-        &--logo {
-            font: normal 12px 'FuturaDemiC';
-            text-transform: uppercase;
-            color: $text-color--main;
-            margin-left: 0px;
-        }
+  .header {
+    max-width: 375px;
+    height: 57px;
+    margin: 0 auto;
+    justify-content: space-between;
+    padding: 0 25px 0 25px;
+    &--button {
+      display: none;
     }
+    &--logo {
+      font: normal 12px 'FuturaDemiC';
+      text-transform: uppercase;
+      color: $text-color--main;
+      margin-left: 0px;
+    }
+  }
     
-    .section {
-        max-width: 375px;
-    }
-
+  .section {
+    max-width: 375px;
+  }
 }

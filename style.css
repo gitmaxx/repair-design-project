@@ -801,7 +801,7 @@
   background-size: auto;
 }
 
-.first_section {
+.main_section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2015,7 +2015,7 @@
     margin-bottom: 0;
     width: 100%;
   }
-  .first_section {
+  .main_section {
     background-color: #181818;
   }
   .section_projects {
